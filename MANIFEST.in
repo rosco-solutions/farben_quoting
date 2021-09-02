@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include farben_quoting *.css
+recursive-include farben_quoting *.csv
+recursive-include farben_quoting *.html
+recursive-include farben_quoting *.ico
+recursive-include farben_quoting *.js
+recursive-include farben_quoting *.json
+recursive-include farben_quoting *.md
+recursive-include farben_quoting *.png
+recursive-include farben_quoting *.py
+recursive-include farben_quoting *.svg
+recursive-include farben_quoting *.txt
+recursive-exclude farben_quoting *.pyc
