@@ -1,0 +1,55 @@
+{
+ "actions": [],
+ "autoname": "format:{template_name}",
+ "creation": "2021-09-03 15:44:24.383504",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "template_name",
+  "template_type",
+  "template_content"
+ ],
+ "fields": [
+  {
+   "fieldname": "template_name",
+   "fieldtype": "Data",
+   "label": "Template Name"
+  },
+  {
+   "fieldname": "template_content",
+   "fieldtype": "Text Editor",
+   "label": "Template Content"
+  },
+  {
+   "fieldname": "template_type",
+   "fieldtype": "Link",
+   "label": "Template Type",
+   "options": "Template Types"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-09-03 15:47:07.499749",
+ "modified_by": "Administrator",
+ "module": "Farben Quoting",
+ "name": "Quote Detail Templates",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

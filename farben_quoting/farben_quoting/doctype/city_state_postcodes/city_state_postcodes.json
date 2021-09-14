@@ -1,0 +1,55 @@
+{
+ "actions": [],
+ "autoname": "format:{city} {state}",
+ "creation": "2021-09-03 15:24:30.334160",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "city",
+  "state",
+  "postcode"
+ ],
+ "fields": [
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "label": "State",
+   "options": "States"
+  },
+  {
+   "fieldname": "postcode",
+   "fieldtype": "Int",
+   "label": "Postcode"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-09-03 15:37:11.830454",
+ "modified_by": "Administrator",
+ "module": "Farben Quoting",
+ "name": "City State Postcodes",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

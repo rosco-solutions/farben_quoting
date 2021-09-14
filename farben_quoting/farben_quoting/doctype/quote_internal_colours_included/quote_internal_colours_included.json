@@ -1,0 +1,30 @@
+{
+ "actions": [],
+ "creation": "2021-09-14 14:55:11.288065",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "internal_colour_included"
+ ],
+ "fields": [
+  {
+   "fieldname": "internal_colour_included",
+   "fieldtype": "Link",
+   "label": "Internal Colour Included",
+   "options": "Internal Colours Included"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2021-09-14 14:55:11.288065",
+ "modified_by": "Administrator",
+ "module": "Farben Quoting",
+ "name": "Quote Internal Colours Included",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

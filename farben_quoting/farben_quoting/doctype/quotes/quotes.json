@@ -1,0 +1,279 @@
+{
+ "actions": [],
+ "autoname": "Q.######",
+ "creation": "2021-09-03 15:54:33.291075",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "job_section",
+  "job_type",
+  "column_break_3",
+  "company",
+  "customer",
+  "job_address_section",
+  "job_address_line_1",
+  "job_address_line_2",
+  "column_break_8",
+  "job_csp",
+  "reference",
+  "job_details_section",
+  "duration",
+  "duration_type",
+  "commencement_date",
+  "payment_terms",
+  "valid_until",
+  "column_break_16",
+  "labour",
+  "labour_gst",
+  "products",
+  "products_gst",
+  "equipment",
+  "equipment_gst",
+  "scaffolding",
+  "scaffolding_gst",
+  "column_break_26",
+  "price",
+  "gst",
+  "total_price",
+  "quote_details_section",
+  "quote_details_start",
+  "works_included",
+  "paints_included",
+  "internal_colours_included",
+  "external_colours_included",
+  "quote_details_end"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Companies"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customers"
+  },
+  {
+   "fieldname": "job_type",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Job Type",
+   "options": "Job Types"
+  },
+  {
+   "fieldname": "job_address_line_1",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Job Address Line 1"
+  },
+  {
+   "fieldname": "job_address_line_2",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Job Address Line 2"
+  },
+  {
+   "fieldname": "job_csp",
+   "fieldtype": "Link",
+   "label": "Job CSP",
+   "options": "City State Postcodes"
+  },
+  {
+   "fieldname": "reference",
+   "fieldtype": "Data",
+   "label": "Reference"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Int",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "duration_type",
+   "fieldtype": "Select",
+   "label": "Duration Type",
+   "options": "days, weeks"
+  },
+  {
+   "fieldname": "commencement_date",
+   "fieldtype": "Date",
+   "label": "Commencement Date"
+  },
+  {
+   "fieldname": "payment_terms",
+   "fieldtype": "Link",
+   "label": "Payment Terms",
+   "options": "Payment Terms"
+  },
+  {
+   "fieldname": "valid_until",
+   "fieldtype": "Date",
+   "label": "Valid Until"
+  },
+  {
+   "fieldname": "labour",
+   "fieldtype": "Currency",
+   "label": "Labour"
+  },
+  {
+   "default": "0",
+   "fieldname": "labour_gst",
+   "fieldtype": "Check",
+   "label": "Labour GST"
+  },
+  {
+   "fieldname": "products",
+   "fieldtype": "Currency",
+   "label": "Products"
+  },
+  {
+   "default": "0",
+   "fieldname": "products_gst",
+   "fieldtype": "Check",
+   "label": "Products GST"
+  },
+  {
+   "fieldname": "equipment",
+   "fieldtype": "Currency",
+   "label": "Equipment"
+  },
+  {
+   "default": "0",
+   "fieldname": "equipment_gst",
+   "fieldtype": "Check",
+   "label": "Equipment GST"
+  },
+  {
+   "fieldname": "scaffolding",
+   "fieldtype": "Currency",
+   "label": "Scaffolding"
+  },
+  {
+   "default": "0",
+   "fieldname": "scaffolding_gst",
+   "fieldtype": "Check",
+   "label": "Scaffolding GST"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "label": "Price"
+  },
+  {
+   "fieldname": "gst",
+   "fieldtype": "Currency",
+   "label": "GST"
+  },
+  {
+   "fieldname": "total_price",
+   "fieldtype": "Currency",
+   "label": "Total Price"
+  },
+  {
+   "fieldname": "paints_included",
+   "fieldtype": "Table",
+   "label": "Paints Included",
+   "options": "Quote Paints"
+  },
+  {
+   "fieldname": "internal_colours_included",
+   "fieldtype": "Table",
+   "label": "Internal Colours Included",
+   "options": "Quote Internal Colours Included"
+  },
+  {
+   "fieldname": "external_colours_included",
+   "fieldtype": "Table",
+   "label": "External Colours Included",
+   "options": "Quote External Colours Included"
+  },
+  {
+   "fieldname": "quote_details_start",
+   "fieldtype": "Table",
+   "in_standard_filter": 1,
+   "label": "Quote Details Start",
+   "options": "Quote Details"
+  },
+  {
+   "fieldname": "quote_details_end",
+   "fieldtype": "Table",
+   "label": "Quote Details End",
+   "options": "Quote Details"
+  },
+  {
+   "fieldname": "works_included",
+   "fieldtype": "Table",
+   "label": "Works Included",
+   "options": "Quote Works Included"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "job_address_section",
+   "fieldtype": "Section Break",
+   "label": "Job Address"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "job_details_section",
+   "fieldtype": "Section Break",
+   "label": "Job Details"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "quote_details_section",
+   "fieldtype": "Section Break",
+   "label": "Print Wording"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "job_section",
+   "fieldtype": "Section Break",
+   "label": "Job"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-09-14 16:07:29.494651",
+ "modified_by": "Administrator",
+ "module": "Farben Quoting",
+ "name": "Quotes",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
