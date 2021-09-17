@@ -11,6 +11,7 @@
   {
    "fieldname": "internal_colour_included",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Internal Colour Included",
    "options": "Internal Colours Included"
   }
@@ -18,7 +19,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2021-09-14 14:55:11.288065",
+ "modified": "2021-09-15 17:25:12.855378",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Quote Internal Colours Included",

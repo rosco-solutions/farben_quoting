@@ -1,39 +1,32 @@
 {
  "actions": [],
- "autoname": "format:{template_name}",
+ "autoname": "format:{paragraph_name}",
  "creation": "2021-09-03 15:44:24.383504",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "template_name",
-  "template_type",
-  "template_content"
+  "paragraph_name",
+  "paragraph_content"
  ],
  "fields": [
   {
-   "fieldname": "template_name",
+   "fieldname": "paragraph_name",
    "fieldtype": "Data",
-   "label": "Template Name"
+   "label": "Paragraph Name"
   },
   {
-   "fieldname": "template_content",
+   "fieldname": "paragraph_content",
    "fieldtype": "Text Editor",
-   "label": "Template Content"
-  },
-  {
-   "fieldname": "template_type",
-   "fieldtype": "Link",
-   "label": "Template Type",
-   "options": "Template Types"
+   "label": "Paragraph Content"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-03 15:47:07.499749",
+ "modified": "2021-09-15 17:00:33.174734",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
- "name": "Quote Detail Templates",
+ "name": "Standard Paragraphs",
  "owner": "Administrator",
  "permissions": [
   {

@@ -8,9 +8,14 @@
  "field_order": [
   "job_section",
   "job_type",
-  "column_break_3",
+  "status",
   "company",
   "customer",
+  "column_break_3",
+  "address_line_1",
+  "address_line_2",
+  "csp",
+  "phone",
   "job_address_section",
   "job_address_line_1",
   "job_address_line_2",
@@ -97,7 +102,7 @@
    "fieldname": "duration_type",
    "fieldtype": "Select",
    "label": "Duration Type",
-   "options": "days, weeks"
+   "options": "days\nweeks"
   },
   {
    "fieldname": "commencement_date",
@@ -250,11 +255,38 @@
    "fieldname": "job_section",
    "fieldtype": "Section Break",
    "label": "Job"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Link",
+   "label": "Status",
+   "options": "Quote Status"
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": "Address Line 1"
+  },
+  {
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldname": "csp",
+   "fieldtype": "Link",
+   "label": "CSP",
+   "options": "City State Postcodes"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-14 16:07:29.494651",
+ "modified": "2021-09-17 14:45:50.680654",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Quotes",

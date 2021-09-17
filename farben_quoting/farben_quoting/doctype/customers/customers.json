@@ -1,23 +1,21 @@
 {
  "actions": [],
- "autoname": "format:{customer} ({company})",
+ "autoname": "format:{title} {first_name} {last_name} ({company})",
  "creation": "2021-09-03 15:23:10.786115",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "customer",
+  "title",
+  "first_name",
+  "last_name",
   "company",
   "address_line_1",
   "address_line_2",
-  "csp"
+  "csp",
+  "phone"
  ],
  "fields": [
-  {
-   "fieldname": "customer",
-   "fieldtype": "Data",
-   "label": "Customer"
-  },
   {
    "fieldname": "address_line_1",
    "fieldtype": "Data",
@@ -39,11 +37,32 @@
    "fieldtype": "Link",
    "label": "CSP",
    "options": "City State Postcodes"
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Link",
+   "label": "Title",
+   "options": "Title"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-03 17:56:11.072077",
+ "modified": "2021-09-15 15:48:17.532967",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Customers",

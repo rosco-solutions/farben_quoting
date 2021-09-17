@@ -11,6 +11,7 @@
   {
    "fieldname": "paints",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Paints",
    "options": "Paints"
   }
@@ -18,7 +19,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2021-09-14 14:45:19.837790",
+ "modified": "2021-09-15 17:08:02.333717",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Quote Paints",

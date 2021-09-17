@@ -4,5 +4,5 @@
 # import frappe
 import unittest
 
-class TestQuoteDetailTemplates(unittest.TestCase):
+class TestStandardParagraphs(unittest.TestCase):
 	pass

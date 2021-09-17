@@ -1,38 +1,26 @@
 {
  "actions": [],
- "autoname": "format:{template_type}",
- "creation": "2021-09-03 15:45:45.933212",
+ "autoname": "format: {title}",
+ "creation": "2021-09-15 15:43:07.776556",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "template_type",
-  "format_start",
-  "format_end"
+  "title"
  ],
  "fields": [
   {
-   "fieldname": "template_type",
+   "fieldname": "title",
    "fieldtype": "Data",
-   "label": "Template Type"
-  },
-  {
-   "fieldname": "format_start",
-   "fieldtype": "Text Editor",
-   "label": "Format Start"
-  },
-  {
-   "fieldname": "format_end",
-   "fieldtype": "Text Editor",
-   "label": "Format End"
+   "label": "Title"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-03 16:01:04.003675",
+ "modified": "2021-09-15 15:43:07.776556",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
- "name": "Template Types",
+ "name": "Title",
  "owner": "Administrator",
  "permissions": [
   {
