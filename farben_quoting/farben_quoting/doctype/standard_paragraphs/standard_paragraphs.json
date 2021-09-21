@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_rename": 1,
  "autoname": "format:{paragraph_name}",
  "creation": "2021-09-03 15:44:24.383504",
  "doctype": "DocType",
@@ -7,6 +8,7 @@
  "engine": "InnoDB",
  "field_order": [
   "paragraph_name",
+  "paragraph_heading",
   "paragraph_content"
  ],
  "fields": [
@@ -19,11 +21,18 @@
    "fieldname": "paragraph_content",
    "fieldtype": "Text Editor",
    "label": "Paragraph Content"
+  },
+  {
+   "fieldname": "paragraph_heading",
+   "fieldtype": "Text Editor",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Paragraph Heading"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-15 17:00:33.174734",
+ "modified": "2021-09-21 19:57:28.382816",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Standard Paragraphs",

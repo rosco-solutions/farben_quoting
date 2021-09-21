@@ -25,9 +25,10 @@
   "job_details_section",
   "duration",
   "duration_type",
+  "quote_date",
+  "valid_until",
   "commencement_date",
   "payment_terms",
-  "valid_until",
   "column_break_16",
   "labour",
   "labour_gst",
@@ -47,7 +48,8 @@
   "paints_included",
   "internal_colours_included",
   "external_colours_included",
-  "quote_details_end"
+  "quote_details_end",
+  "final_notes"
  ],
  "fields": [
   {
@@ -167,17 +169,20 @@
   {
    "fieldname": "price",
    "fieldtype": "Currency",
-   "label": "Price"
+   "label": "Price",
+   "read_only": 1
   },
   {
    "fieldname": "gst",
    "fieldtype": "Currency",
-   "label": "GST"
+   "label": "GST",
+   "read_only": 1
   },
   {
    "fieldname": "total_price",
    "fieldtype": "Currency",
-   "label": "Total Price"
+   "label": "Total Price",
+   "read_only": 1
   },
   {
    "fieldname": "paints_included",
@@ -282,11 +287,22 @@
    "fieldname": "phone",
    "fieldtype": "Data",
    "label": "Phone"
+  },
+  {
+   "fieldname": "quote_date",
+   "fieldtype": "Date",
+   "label": "Quote Date"
+  },
+  {
+   "fieldname": "final_notes",
+   "fieldtype": "Table",
+   "label": "Final Notes",
+   "options": "Quote Details"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-17 14:45:50.680654",
+ "modified": "2021-09-21 18:48:55.702312",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Quotes",

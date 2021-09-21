@@ -1,6 +1,7 @@
 {
  "actions": [],
- "autoname": "format:{title} {first_name} {last_name} ({company})",
+ "allow_rename": 1,
+ "autoname": "format:{title} {first_name} {last_name}",
  "creation": "2021-09-03 15:23:10.786115",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -62,7 +63,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-15 15:48:17.532967",
+ "modified": "2021-09-17 16:32:01.980673",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Customers",

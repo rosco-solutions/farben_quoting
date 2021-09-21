@@ -1,6 +1,7 @@
 {
  "actions": [],
- "autoname": "format:{city} {state}",
+ "allow_rename": 1,
+ "autoname": "format:{city} {state} {postcode}",
  "creation": "2021-09-03 15:24:30.334160",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -24,13 +25,13 @@
   },
   {
    "fieldname": "postcode",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Postcode"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-03 15:37:11.830454",
+ "modified": "2021-09-17 16:35:18.857745",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "City State Postcodes",
