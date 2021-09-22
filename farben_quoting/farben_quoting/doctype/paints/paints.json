@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_rename": 1,
  "autoname": "format:{paints}",
  "creation": "2021-09-14 14:44:25.446502",
  "doctype": "DocType",
@@ -17,7 +18,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-14 14:44:25.446502",
+ "modified": "2021-09-22 11:19:22.340698",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Paints",

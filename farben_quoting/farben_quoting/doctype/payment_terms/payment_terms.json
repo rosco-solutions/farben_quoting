@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_rename": 1,
  "autoname": "format:{payment_terms}",
  "creation": "2021-09-03 15:40:53.946796",
  "doctype": "DocType",
@@ -17,7 +18,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-03 15:40:53.946796",
+ "modified": "2021-09-22 11:19:32.625618",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Payment Terms",

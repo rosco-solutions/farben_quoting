@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_rename": 1,
  "autoname": "format:{work_type}",
  "creation": "2021-09-14 15:30:03.283541",
  "doctype": "DocType",
@@ -23,7 +24,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-14 15:30:03.283541",
+ "modified": "2021-09-22 11:21:43.369736",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Works Included",

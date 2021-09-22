@@ -49,7 +49,9 @@
   "internal_colours_included",
   "external_colours_included",
   "quote_details_end",
-  "final_notes"
+  "final_notes",
+  "signature",
+  "customer_to_sign"
  ],
  "fields": [
   {
@@ -298,11 +300,23 @@
    "fieldtype": "Table",
    "label": "Final Notes",
    "options": "Quote Details"
+  },
+  {
+   "fieldname": "signature",
+   "fieldtype": "Link",
+   "label": "Signature",
+   "options": "Signatures"
+  },
+  {
+   "default": "0",
+   "fieldname": "customer_to_sign",
+   "fieldtype": "Check",
+   "label": "Customer To Sign"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-21 18:48:55.702312",
+ "modified": "2021-09-22 11:27:51.234674",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Quotes",

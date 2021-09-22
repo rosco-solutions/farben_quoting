@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_rename": 1,
  "autoname": "format:{status}",
  "creation": "2021-09-14 15:52:28.345754",
  "doctype": "DocType",
@@ -17,7 +18,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-14 15:52:28.345754",
+ "modified": "2021-09-22 11:20:38.363176",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Quote Status",
