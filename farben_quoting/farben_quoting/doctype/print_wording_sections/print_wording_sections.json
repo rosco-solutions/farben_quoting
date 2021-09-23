@@ -1,34 +1,26 @@
 {
  "actions": [],
- "allow_rename": 1,
- "autoname": "format:{job_type}",
- "creation": "2021-09-03 15:38:18.784029",
+ "autoname": "format: {section}",
+ "creation": "2021-09-23 11:02:15.560962",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "job_type",
-  "defaults"
+  "section"
  ],
  "fields": [
   {
-   "fieldname": "job_type",
+   "fieldname": "section",
    "fieldtype": "Data",
-   "label": "Job Type"
-  },
-  {
-   "fieldname": "defaults",
-   "fieldtype": "Table",
-   "label": "Defaults",
-   "options": "Job Type Defaults"
+   "label": "Section"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-23 10:53:52.561494",
+ "modified": "2021-09-23 11:02:15.560962",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
- "name": "Job Types",
+ "name": "Print Wording Sections",
  "owner": "Administrator",
  "permissions": [
   {

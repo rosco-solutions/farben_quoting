@@ -14,6 +14,64 @@ frappe.ui.form.on('Quotes', {
                 })
             });
 	},
+	job_type(frm){
+		frappe.confirm(
+			'Would you like to remove all current Print Wording entries and replace with defaults?',
+			function(){
+				// Get list of default entries from Job Type Defaults and add them to this quote
+				frm.doc.quote_details_start = [];
+				frm.refresh_field('quote_details_start');
+				frm.doc.works_included = [];
+				frm.refresh_field('works_included');
+				frm.doc.paints_included = [];
+				frm.refresh_field('paints_included');
+				frm.doc.internal_colours_included = [];
+				frm.refresh_field('internal_colours_included');
+				frm.doc.external_colours_included = [];
+				frm.refresh_field('external_colours_included');
+				frm.doc.quote_details_end = [];
+				frm.refresh_field('quote_details_end');
+				frm.doc.final_notes = [];
+				frm.refresh_field('final_notes');
+				frappe.db.get_doc('Job Types', frm.doc.job_type)
+					.then(r => {
+						var myDefaults = r.defaults;
+						(function loop_defaults(i){
+							if (i == myDefaults.length) return; // jumps out of loop_defaults
+							var mySection = myDefaults[i].section;
+							var mySectionFieldName = mySection.toLowerCase().replaceAll(' ','_');
+							if (mySection == 'Quote Details Start' ||  
+								mySection == 'Quote Details End' || 
+								mySection == 'Final Notes'){
+								frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['paragraph_name', 'paragraph_heading', 'paragraph_content'])
+									.then(p => {
+										let row = frm.add_child(mySectionFieldName, {
+											paragraph_name: p.message.paragraph_name,
+											heading: p.message.paragraph_heading,
+											content: p.message.paragraph_content,
+										});
+										frm.refresh_field(mySectionFieldName);
+										loop_defaults(i+1);
+									})
+							} else if (mySection == 'Works Included') {
+								frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['work_type', 'work_details'])
+									.then(p => {
+										let row = frm.add_child(mySectionFieldName, {
+											work_type: p.message.work_type,
+											work_details: p.message.work_details
+										});
+										frm.refresh_field(mySectionFieldName);
+										loop_defaults(i+1);
+								})
+							}	
+						})(0);
+					})
+			},
+			function(){
+				msgprint('you selected no');
+			}
+		)
+	},
 	customer(frm){
 		frappe.db.get_value("Customers", {"name": frm.doc.customer}, ["address_line_1", "address_line_2", "csp", "phone"], function(value) {
             frm.doc.address_line_1 = value.address_line_1;
