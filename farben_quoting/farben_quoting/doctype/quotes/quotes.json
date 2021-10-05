@@ -16,6 +16,7 @@
   "address_line_2",
   "csp",
   "phone",
+  "email",
   "job_address_section",
   "job_address_line_1",
   "job_address_line_2",
@@ -57,12 +58,14 @@
   {
    "fieldname": "company",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Company",
    "options": "Companies"
   },
   {
    "fieldname": "customer",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Customer",
    "options": "Customers"
@@ -70,6 +73,7 @@
   {
    "fieldname": "job_type",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Job Type",
    "options": "Job Types"
@@ -312,11 +316,16 @@
    "fieldname": "customer_to_sign",
    "fieldtype": "Check",
    "label": "Customer To Sign"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-22 11:27:51.234674",
+ "modified": "2021-10-05 19:13:53.806080",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Quotes",
@@ -335,6 +344,7 @@
    "write": 1
   }
  ],
+ "show_name_in_global_search": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "track_changes": 1

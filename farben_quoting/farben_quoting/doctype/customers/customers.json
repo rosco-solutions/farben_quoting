@@ -14,7 +14,8 @@
   "address_line_1",
   "address_line_2",
   "csp",
-  "phone"
+  "phone",
+  "email"
  ],
  "fields": [
   {
@@ -59,11 +60,16 @@
    "fieldname": "phone",
    "fieldtype": "Data",
    "label": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-17 16:32:01.980673",
+ "modified": "2021-09-29 11:05:30.598671",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Customers",
