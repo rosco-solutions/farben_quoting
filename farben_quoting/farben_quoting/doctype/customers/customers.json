@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:{title} {first_name} {last_name}",
  "creation": "2021-09-03 15:23:10.786115",
@@ -69,7 +70,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-29 11:05:30.598671",
+ "modified": "2021-10-06 09:53:53.221918",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Customers",
@@ -84,6 +85,20 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farben",
+   "select": 1,
    "share": 1,
    "write": 1
   }

@@ -104,18 +104,19 @@ frappe.ui.form.on('Quotes', {
 				frm.doc.address_line_2 = value.address_line_2;
 				frm.doc.csp = value.csp;
 				frm.doc.phone = value.phone;
-				frm.doc.job_address_line_1 = value.address_line_1;
-				frm.doc.job_address_line_2 = value.address_line_2;
-				frm.doc.job_csp = value.csp;
 				frm.doc.email = value.email;
+				// frm.doc.job_address_line_1 = value.address_line_1;
+				// frm.doc.job_address_line_2 = value.address_line_2;
+				// frm.doc.job_csp = value.csp;
+				
 				frm.refresh_field('address_line_1');
 				frm.refresh_field('address_line_2');
 				frm.refresh_field('csp');
 				frm.refresh_field('phone');
-				frm.refresh_field('job_address_line_1');
-				frm.refresh_field('job_address_line_2');
-				frm.refresh_field('job_csp');
 				frm.refresh_field('email');
+				// frm.refresh_field('job_address_line_1');
+				// frm.refresh_field('job_address_line_2');
+				// frm.refresh_field('job_csp');
 			});
 		} else {
 			if (mytimer) clearTimeout(mytimer);
@@ -183,18 +184,18 @@ function clear_address_fields(myfrm){
 	myfrm.doc.address_line_2 = '';
 	myfrm.doc.csp = '';
 	myfrm.doc.phone = '';
-	myfrm.doc.job_address_line_1 = '';
-	myfrm.doc.job_address_line_2 = '';
-	myfrm.doc.job_csp = '';
 	myfrm.doc.email = '';
+	// myfrm.doc.job_address_line_1 = '';
+	// myfrm.doc.job_address_line_2 = '';
+	// myfrm.doc.job_csp = '';
 	myfrm.refresh_field('address_line_1');
 	myfrm.refresh_field('address_line_2');
 	myfrm.refresh_field('csp');
 	myfrm.refresh_field('phone');
-	myfrm.refresh_field('job_address_line_1');
-	myfrm.refresh_field('job_address_line_2');
-	myfrm.refresh_field('job_csp');
 	myfrm.refresh_field('email');
+	// myfrm.refresh_field('job_address_line_1');
+	// myfrm.refresh_field('job_address_line_2');
+	// myfrm.refresh_field('job_csp');
 }
 
 frappe.ui.form.on('Quote Details', {

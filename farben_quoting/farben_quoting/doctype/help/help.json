@@ -1,28 +1,32 @@
 {
  "actions": [],
- "allow_import": 1,
- "allow_rename": 1,
- "autoname": "format:{payment_terms}",
- "creation": "2021-09-03 15:40:53.946796",
+ "autoname": "format:{title}",
+ "creation": "2021-10-06 10:39:34.754566",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "payment_terms"
+  "title",
+  "content"
  ],
  "fields": [
   {
-   "fieldname": "payment_terms",
+   "fieldname": "title",
    "fieldtype": "Data",
-   "label": "Payment Terms"
+   "label": "Title"
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "Text Editor",
+   "label": "Content"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-10-06 09:58:41.598585",
+ "modified": "2021-10-06 10:44:45.502743",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
- "name": "Payment Terms",
+ "name": "Help",
  "owner": "Administrator",
  "permissions": [
   {
@@ -38,18 +42,14 @@
    "write": 1
   },
   {
-   "create": 1,
-   "delete": 1,
    "email": 1,
    "export": 1,
-   "import": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "Farben",
    "select": 1,
-   "share": 1,
-   "write": 1
+   "share": 1
   }
  ],
  "sort_field": "modified",

@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:{status}",
  "creation": "2021-09-14 15:52:28.345754",
@@ -18,7 +19,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-22 11:20:38.363176",
+ "modified": "2021-10-06 10:02:58.395678",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Quote Status",
@@ -33,6 +34,20 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farben",
+   "select": 1,
    "share": 1,
    "write": 1
   }

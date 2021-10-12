@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:{company}",
  "creation": "2021-09-03 15:30:43.823094",
@@ -7,18 +8,49 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "company"
+  "company",
+  "address_line_1",
+  "address_line_2",
+  "csp",
+  "phone",
+  "email"
  ],
  "fields": [
   {
    "fieldname": "company",
    "fieldtype": "Data",
    "label": "Company"
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": " Address Line 1"
+  },
+  {
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldname": "csp",
+   "fieldtype": "Link",
+   "label": "CSP",
+   "options": "City State Postcodes"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-17 16:32:57.355006",
+ "modified": "2021-10-08 11:58:11.820213",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Companies",
@@ -33,6 +65,20 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farben",
+   "select": 1,
    "share": 1,
    "write": 1
   }
