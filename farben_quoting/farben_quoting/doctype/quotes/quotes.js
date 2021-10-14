@@ -141,10 +141,13 @@ frappe.ui.form.on('Quotes', {
 	products(frm){
 		calc_costing(frm);
 	},
-	equipment(frm){
+	cost_1(frm){
 		calc_costing(frm);
 	},
-	scaffolding(frm){
+	cost_2(frm){
+		calc_costing(frm);
+	},
+	cost_3(frm){
 		calc_costing(frm);
 	},
 	labour_gst(frm){
@@ -153,27 +156,37 @@ frappe.ui.form.on('Quotes', {
 	products_gst(frm){
 		calc_costing_gst(frm);
 	},
-	equipment_gst(frm){
+	cost_1_gst(frm){
 		calc_costing_gst(frm);
 	},
-	scaffolding_gst(frm){
+	cost_2_gst(frm){
 		calc_costing_gst(frm);
 	},
+	cost_3_gst(frm){
+		calc_costing_gst(frm);
+	}
 });
 
 function calc_costing(myfrm){
-	myfrm.doc.price = myfrm.doc.labour + myfrm.doc.products + myfrm.doc.equipment + myfrm.doc.scaffolding;
+	myfrm.doc.price = 	(myfrm.doc.labour?myfrm.doc.labour:0) + (myfrm.doc.products?myfrm.doc.products:0) + (myfrm.doc.cost_1?myfrm.doc.cost_1:0) + 
+						(myfrm.doc.cost_2?myfrm.doc.cost_2:0) + (myfrm.doc.cost_3?myfrm.doc.cost_3:0);
 	myfrm.refresh_field('price');
-	myfrm.doc.gst = 0.1 * cint(myfrm.doc.labour_gst) * myfrm.doc.labour + 0.1 * cint(myfrm.doc.products_gst) * myfrm.doc.products + 
-					0.1 * cint(myfrm.doc.equipment_gst) * myfrm.doc.equipment + 0.1 * cint(myfrm.doc.scaffolding_gst) * myfrm.doc.scaffolding;
+	myfrm.doc.gst = 0.1 * cint((myfrm.doc.labour_gst?myfrm.doc.labour_gst:0)) * (myfrm.doc.labour?myfrm.doc.labour:0) + 
+					0.1 * cint((myfrm.doc.products_gst?myfrm.doc.products_gst:0)) * (myfrm.doc.products?myfrm.doc.products:0) + 
+					0.1 * cint((myfrm.doc.cost_1_gst?myfrm.doc.cost_1_gst:0)) * (myfrm.doc.cost_1?myfrm.doc.cost_1:0) + 
+					0.1 * cint((myfrm.doc.cost_2_gst?myfrm.doc.cost_2_gst:0)) * (myfrm.doc.cost_2?myfrm.doc.cost_2:0) +
+					0.1 * cint((myfrm.doc.cost_3_gst?myfrm.doc.cost_3_gst:0)) * (myfrm.doc.cost_3?myfrm.doc.cost_3:0);
 	myfrm.refresh_field('gst');
 	myfrm.doc.total_price = myfrm.doc.price + myfrm.doc.gst;
 	myfrm.refresh_field('total_price');
 }
 
 function calc_costing_gst(myfrm){
-	myfrm.doc.gst = 0.1 * cint(myfrm.doc.labour_gst) * myfrm.doc.labour + 0.1 * cint(myfrm.doc.products_gst) * myfrm.doc.products + 
-					0.1 * cint(myfrm.doc.equipment_gst) * myfrm.doc.equipment + 0.1 * cint(myfrm.doc.scaffolding_gst) * myfrm.doc.scaffolding;
+	myfrm.doc.gst = 0.1 * cint((myfrm.doc.labour_gst?myfrm.doc.labour_gst:0)) * (myfrm.doc.labour?myfrm.doc.labour:0) + 
+					0.1 * cint((myfrm.doc.products_gst?myfrm.doc.products_gst:0)) * (myfrm.doc.products?myfrm.doc.products:0) + 
+					0.1 * cint((myfrm.doc.cost_1_gst?myfrm.doc.cost_1_gst:0)) * (myfrm.doc.cost_1?myfrm.doc.cost_1:0) + 
+					0.1 * cint((myfrm.doc.cost_2_gst?myfrm.doc.cost_2_gst:0)) * (myfrm.doc.cost_2?myfrm.doc.cost_2:0) +
+					0.1 * cint((myfrm.doc.cost_3_gst?myfrm.doc.cost_3_gst:0)) * (myfrm.doc.cost_3?myfrm.doc.cost_3:0);
 	myfrm.refresh_field('gst');
 	myfrm.doc.total_price = myfrm.doc.price + myfrm.doc.gst;
 	myfrm.refresh_field('total_price');

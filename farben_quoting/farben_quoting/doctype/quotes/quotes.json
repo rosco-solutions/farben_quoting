@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "Q.######",
+ "autoname": ".######",
  "creation": "2021-09-03 15:54:33.291075",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -37,13 +37,21 @@
   "labour_gst",
   "products",
   "products_gst",
-  "equipment",
-  "equipment_gst",
-  "scaffolding",
-  "scaffolding_gst",
+  "cost_name_1",
+  "cost_1",
+  "cost_1_gst",
   "column_break_26",
+  "cost_name_2",
+  "cost_2",
+  "cost_2_gst",
+  "cost_name_3",
+  "cost_3",
+  "cost_3_gst",
+  "section_break_40",
   "price",
+  "column_break_42",
   "gst",
+  "column_break_44",
   "total_price",
   "quote_details_section",
   "quote_details_start",
@@ -153,28 +161,6 @@
    "label": "Products GST"
   },
   {
-   "fieldname": "equipment",
-   "fieldtype": "Currency",
-   "label": "Equipment"
-  },
-  {
-   "default": "0",
-   "fieldname": "equipment_gst",
-   "fieldtype": "Check",
-   "label": "Equipment GST"
-  },
-  {
-   "fieldname": "scaffolding",
-   "fieldtype": "Currency",
-   "label": "Scaffolding"
-  },
-  {
-   "default": "0",
-   "fieldname": "scaffolding_gst",
-   "fieldtype": "Check",
-   "label": "Scaffolding GST"
-  },
-  {
    "fieldname": "price",
    "fieldtype": "Currency",
    "label": "Price",
@@ -226,6 +212,7 @@
   {
    "fieldname": "works_included",
    "fieldtype": "Table",
+   "in_filter": 1,
    "label": "Works Included",
    "options": "Quote Works Included"
   },
@@ -323,11 +310,71 @@
    "fieldname": "email",
    "fieldtype": "Data",
    "label": "Email"
+  },
+  {
+   "fieldname": "cost_name_1",
+   "fieldtype": "Data",
+   "label": "Cost Name 1"
+  },
+  {
+   "fieldname": "cost_1",
+   "fieldtype": "Currency",
+   "label": "Cost 1"
+  },
+  {
+   "default": "0",
+   "fieldname": "cost_1_gst",
+   "fieldtype": "Check",
+   "label": "Cost 1 GST"
+  },
+  {
+   "fieldname": "cost_name_2",
+   "fieldtype": "Data",
+   "label": "Cost Name 2"
+  },
+  {
+   "fieldname": "cost_2",
+   "fieldtype": "Currency",
+   "label": "Cost 2"
+  },
+  {
+   "default": "0",
+   "fieldname": "cost_2_gst",
+   "fieldtype": "Check",
+   "label": "Cost 2 GST"
+  },
+  {
+   "fieldname": "cost_name_3",
+   "fieldtype": "Data",
+   "label": "Cost Name 3"
+  },
+  {
+   "fieldname": "cost_3",
+   "fieldtype": "Currency",
+   "label": "Cost 3"
+  },
+  {
+   "default": "0",
+   "fieldname": "cost_3_gst",
+   "fieldtype": "Check",
+   "label": "Cost 3 GST"
+  },
+  {
+   "fieldname": "section_break_40",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_42",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_44",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-10-06 10:03:45.948763",
+ "modified": "2021-10-13 11:17:58.632391",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Quotes",
