@@ -44,6 +44,15 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Contact",
+   "link_to": "Contact",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "City State Postcodes",
    "link_to": "City State Postcodes",
    "link_type": "DocType",
@@ -166,7 +175,7 @@
    "type": "Link"
   }
  ],
- "modified": "2021-10-12 16:02:58.385038",
+ "modified": "2021-10-22 13:24:55.887423",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Farben Quoting",
