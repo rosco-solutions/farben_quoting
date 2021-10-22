@@ -1,0 +1,183 @@
+[
+ {
+  "defaults": [],
+  "docstatus": 0,
+  "doctype": "Job Types",
+  "job_type": "Commercial New",
+  "modified": "2021-09-03 15:39:05.929987",
+  "name": "Commercial New",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ },
+ {
+  "defaults": [
+   {
+    "default_entry": "Commercial Introduction",
+    "parent": "Commercial Repaint",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Standard Paragraphs",
+    "section": "Quote Details Start"
+   },
+   {
+    "default_entry": "Commercial At Farben Painting",
+    "parent": "Commercial Repaint",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Standard Paragraphs",
+    "section": "Quote Details Start"
+   },
+   {
+    "default_entry": "FULL PROTECTION",
+    "parent": "Commercial Repaint",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Works Included",
+    "section": "Works Included"
+   },
+   {
+    "default_entry": "PREPARATION",
+    "parent": "Commercial Repaint",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Works Included",
+    "section": "Works Included"
+   },
+   {
+    "default_entry": "PAINTING",
+    "parent": "Commercial Repaint",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Works Included",
+    "section": "Works Included"
+   },
+   {
+    "default_entry": "CLEAN UP",
+    "parent": "Commercial Repaint",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Works Included",
+    "section": "Works Included"
+   },
+   {
+    "default_entry": "ENVIRONMENT",
+    "parent": "Commercial Repaint",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Works Included",
+    "section": "Works Included"
+   },
+   {
+    "default_entry": "As per Schedule",
+    "parent": "Commercial Repaint",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Internal Colours Included",
+    "section": "Internal Colours Included"
+   },
+   {
+    "default_entry": "As per Schedule",
+    "parent": "Commercial Repaint",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "External Colours Included",
+    "section": "External Colours Included"
+   },
+   {
+    "default_entry": "Colour Statement - Commercial",
+    "parent": "Commercial Repaint",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Standard Paragraphs",
+    "section": "Quote Details End"
+   },
+   {
+    "default_entry": "Exclusions",
+    "parent": "Commercial Repaint",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Standard Paragraphs",
+    "section": "Quote Details End"
+   },
+   {
+    "default_entry": "Job Specific Exclusions - Internal",
+    "parent": "Commercial Repaint",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Standard Paragraphs",
+    "section": "Quote Details End"
+   },
+   {
+    "default_entry": "Job Specific Exclusions - External",
+    "parent": "Commercial Repaint",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Standard Paragraphs",
+    "section": "Quote Details End"
+   },
+   {
+    "default_entry": "Job Specific Inclusions - Internal",
+    "parent": "Commercial Repaint",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Standard Paragraphs",
+    "section": "Quote Details End"
+   },
+   {
+    "default_entry": "Job Specific Inclusions - External",
+    "parent": "Commercial Repaint",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Standard Paragraphs",
+    "section": "Quote Details End"
+   },
+   {
+    "default_entry": "Price Includes",
+    "parent": "Commercial Repaint",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Standard Paragraphs",
+    "section": "Quote Details End"
+   },
+   {
+    "default_entry": "Notes",
+    "parent": "Commercial Repaint",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Standard Paragraphs",
+    "section": "Final Notes"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Job Types",
+  "job_type": "Commercial Repaint",
+  "modified": "2021-10-20 10:18:03.543328",
+  "name": "Commercial Repaint",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ },
+ {
+  "defaults": [],
+  "docstatus": 0,
+  "doctype": "Job Types",
+  "job_type": "Residential New",
+  "modified": "2021-09-03 15:39:32.215019",
+  "name": "Residential New",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ },
+ {
+  "defaults": [],
+  "docstatus": 0,
+  "doctype": "Job Types",
+  "job_type": "Residential Repaint",
+  "modified": "2021-09-03 15:39:42.331919",
+  "name": "Residential Repaint",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ }
+]

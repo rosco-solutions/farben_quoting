@@ -1,0 +1,72 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Print Wording Sections",
+  "modified": "2021-09-23 11:06:20.487306",
+  "name": "Quote Details Start",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "section": "Quote Details Start"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Print Wording Sections",
+  "modified": "2021-09-23 11:06:35.261043",
+  "name": "Works Included",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "section": "Works Included"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Print Wording Sections",
+  "modified": "2021-09-23 11:06:45.230571",
+  "name": "Paints Included",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "section": "Paints Included"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Print Wording Sections",
+  "modified": "2021-09-23 11:07:00.600952",
+  "name": "Internal Colours Included",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "section": "Internal Colours Included"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Print Wording Sections",
+  "modified": "2021-09-23 11:07:11.753013",
+  "name": "External Colours Included",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "section": "External Colours Included"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Print Wording Sections",
+  "modified": "2021-09-23 11:07:51.049168",
+  "name": "Quote Details End",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "section": "Quote Details End"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Print Wording Sections",
+  "modified": "2021-09-23 11:07:59.907444",
+  "name": "Final Notes",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "section": "Final Notes"
+ }
+]

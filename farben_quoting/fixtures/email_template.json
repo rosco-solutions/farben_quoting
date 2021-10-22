@@ -1,0 +1,15 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Email Template",
+  "modified": "2021-10-19 08:40:24.429650",
+  "name": "Farben Standard Quote Email",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "response": "<div class=\"ql-editor read-mode\"><p>{{ customer }},</p><p><br></p><p>Your Quote {{ name }} is attached and ready for your approval. </p><p><br></p><p>Regards</p><p>{{ signature }}</p><p>Farben Quoting &amp; Painting</p><p><br></p></div>",
+  "response_html": null,
+  "subject": "Farben Painting & Decorating Quote {{ name }}",
+  "use_html": 0
+ }
+]
