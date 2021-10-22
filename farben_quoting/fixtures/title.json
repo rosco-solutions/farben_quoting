@@ -38,15 +38,5 @@
   "parentfield": null,
   "parenttype": null,
   "title": "Dr."
- },
- {
-  "docstatus": 0,
-  "doctype": "Title",
-  "modified": "2021-10-22 14:09:58.677056",
-  "name": "myTitle",
-  "parent": null,
-  "parentfield": null,
-  "parenttype": null,
-  "title": "myTitle"
  }
 ]
