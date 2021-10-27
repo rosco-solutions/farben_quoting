@@ -53,6 +53,24 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "User",
+   "link_to": "User",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Email Template",
+   "link_to": "Email Template",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "General Setup",
    "link_type": "DocType",
    "onboard": 0,
@@ -175,7 +193,7 @@
    "type": "Link"
   }
  ],
- "modified": "2021-10-22 14:00:02.370151",
+ "modified": "2021-10-27 17:09:46.011491",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Farben Quoting",
