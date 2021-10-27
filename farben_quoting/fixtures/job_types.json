@@ -1,10 +1,51 @@
 [
  {
-  "defaults": [],
+  "defaults": [
+   {
+    "default_entry": "Commercial Introduction",
+    "parent": "Commercial New",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Standard Paragraphs",
+    "section": "Quote Details Start"
+   },
+   {
+    "default_entry": "CLEAN UP",
+    "parent": "Commercial New",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Works Included",
+    "section": "Works Included"
+   },
+   {
+    "default_entry": "ENVIRONMENT",
+    "parent": "Commercial New",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Works Included",
+    "section": "Works Included"
+   },
+   {
+    "default_entry": "Price Includes",
+    "parent": "Commercial New",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Standard Paragraphs",
+    "section": "Quote Details End"
+   },
+   {
+    "default_entry": "Notes",
+    "parent": "Commercial New",
+    "parentfield": "defaults",
+    "parenttype": "Job Types",
+    "print_wording_type": "Standard Paragraphs",
+    "section": "Final Notes"
+   }
+  ],
   "docstatus": 0,
   "doctype": "Job Types",
   "job_type": "Commercial New",
-  "modified": "2021-09-03 15:39:05.929987",
+  "modified": "2021-10-27 11:11:46.998024",
   "name": "Commercial New",
   "parent": null,
   "parentfield": null,
