@@ -97,7 +97,6 @@
   {
    "fieldname": "job_address_line_2",
    "fieldtype": "Data",
-   "in_standard_filter": 1,
    "label": "Job Address Line 2"
   },
   {
@@ -109,6 +108,8 @@
   {
    "fieldname": "reference",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Reference"
   },
   {
@@ -286,6 +287,8 @@
   {
    "fieldname": "quote_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Quote Date"
   },
   {
@@ -374,7 +377,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-10-27 17:24:31.496714",
+ "modified": "2021-11-16 11:07:42.202322",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Quotes",
