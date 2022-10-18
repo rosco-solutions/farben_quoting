@@ -57,7 +57,9 @@
   "quote_details_start",
   "works_included",
   "paints_included",
+  "add_standard_internal_colours_included",
   "internal_colours_included",
+  "add_standard_external_colours_included",
   "external_colours_included",
   "quote_details_end",
   "final_notes",
@@ -145,7 +147,7 @@
    "label": "Labour"
   },
   {
-   "default": "0",
+   "default": "1",
    "fieldname": "labour_gst",
    "fieldtype": "Check",
    "label": "Labour GST"
@@ -156,7 +158,7 @@
    "label": "Products"
   },
   {
-   "default": "0",
+   "default": "1",
    "fieldname": "products_gst",
    "fieldtype": "Check",
    "label": "Products GST"
@@ -325,7 +327,7 @@
    "label": "Cost 1"
   },
   {
-   "default": "0",
+   "default": "1",
    "fieldname": "cost_1_gst",
    "fieldtype": "Check",
    "label": "Cost 1 GST"
@@ -341,7 +343,7 @@
    "label": "Cost 2"
   },
   {
-   "default": "0",
+   "default": "1",
    "fieldname": "cost_2_gst",
    "fieldtype": "Check",
    "label": "Cost 2 GST"
@@ -357,7 +359,7 @@
    "label": "Cost 3"
   },
   {
-   "default": "0",
+   "default": "1",
    "fieldname": "cost_3_gst",
    "fieldtype": "Check",
    "label": "Cost 3 GST"
@@ -373,11 +375,23 @@
   {
    "fieldname": "column_break_44",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "add_standard_internal_colours_included",
+   "fieldtype": "Link",
+   "label": "Add Standard Internal Colours Included",
+   "options": "Internal Colours Included"
+  },
+  {
+   "fieldname": "add_standard_external_colours_included",
+   "fieldtype": "Link",
+   "label": "Add Standard External Colours Included",
+   "options": "External Colours Included"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-11-16 11:07:42.202322",
+ "modified": "2022-10-18 11:41:20.709563",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Quotes",

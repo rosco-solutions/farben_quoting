@@ -11,6 +11,13 @@ frappe.ui.form.on('Quotes', {
 				}
 			}
 		});
+		frm.set_query('paint', 'paints_included', function(){
+			return {
+				filters: {
+					'hide': '0'
+				}
+			}
+		});		
 	},
 	job_type(frm){
 		frappe.confirm(
@@ -164,6 +171,22 @@ frappe.ui.form.on('Quotes', {
 	},
 	cost_3_gst(frm){
 		calc_costing_gst(frm);
+	},
+	add_standard_internal_colours_included(frm){
+		frm.add_child('internal_colours_included', {
+			internal_colour_included: frm.doc.add_standard_internal_colours_included
+		});
+		frm.doc.add_standard_internal_colours_included = '';
+		frm.refresh_field('add_standard_internal_colours_included');
+		frm.refresh_field('internal_colours_included');
+	},
+	add_standard_external_colours_included(frm){
+		frm.add_child('external_colours_included', {
+			external_colour_included: frm.doc.add_standard_external_colours_included
+		});
+		frm.doc.add_standard_external_colours_included = '';
+		frm.refresh_field('add_standard_external_colours_included');
+		frm.refresh_field('external_colours_included');
 	}
 });
 
@@ -237,3 +260,15 @@ frappe.ui.form.on('Quote Works Included', {
 		};
 	}
 });
+
+// frappe.ui.form.on('Quote Paints', {
+// 	onload: function(frm){		
+// 		frm.set_query('paint', 'quote_paints', function(){
+// 			return {
+// 				filters: {
+// 					'hide': '0'
+// 				}
+// 			}
+// 		});
+// 	},
+// });
