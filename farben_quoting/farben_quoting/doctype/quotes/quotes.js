@@ -2,6 +2,8 @@
 // For license information, please see license.txt
 
 var mytimer;
+var job_type_timeout;
+
 frappe.ui.form.on('Quotes', {
 	onload(frm) {
 		frm.set_query('customer', function(){
@@ -11,98 +13,20 @@ frappe.ui.form.on('Quotes', {
 				}
 			}
 		});
-		frm.set_query('paint', 'paints_included', function(){
-			return {
-				filters: {
-					'hide': '0'
-				}
-			}
-		});		
 	},
 	job_type(frm){
-		frappe.confirm(
-			'Would you like to remove all current Print Wording entries and replace with defaults?',
-			function(){
-				// Get list of default entries from Job Type Defaults and add them to this quote
-				frm.doc.quote_details_start = [];
-				frm.refresh_field('quote_details_start');
-				frm.doc.works_included = [];
-				frm.refresh_field('works_included');
-				frm.doc.paints_included = [];
-				frm.refresh_field('paints_included');
-				frm.doc.internal_colours_included = [];
-				frm.refresh_field('internal_colours_included');
-				frm.doc.external_colours_included = [];
-				frm.refresh_field('external_colours_included');
-				frm.doc.quote_details_end = [];
-				frm.refresh_field('quote_details_end');
-				frm.doc.final_notes = [];
-				frm.refresh_field('final_notes');
-				frappe.db.get_doc('Job Types', frm.doc.job_type)
-					.then(r => {
-						var myDefaults = r.defaults;
-						(function loop_defaults(i){
-							if (i == myDefaults.length) return; // jumps out of loop_defaults
-							var mySection = myDefaults[i].section;
-							var mySectionFieldName = mySection.toLowerCase().replaceAll(' ','_');
-							if (mySection == 'Quote Details Start' ||  
-								mySection == 'Quote Details End' || 
-								mySection == 'Final Notes'){
-								frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['paragraph_name', 'paragraph_heading', 'paragraph_content'])
-									.then(p => {
-										let row = frm.add_child(mySectionFieldName, {
-											paragraph_name: p.message.paragraph_name,
-											heading: p.message.paragraph_heading,
-											content: p.message.paragraph_content,
-										});
-										frm.refresh_field(mySectionFieldName);
-										loop_defaults(i+1);
-									})
-							} else if (mySection == 'Works Included') {
-								frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['work_type', 'work_details'])
-									.then(p => {
-										let row = frm.add_child(mySectionFieldName, {
-											work_type: p.message.work_type,
-											work_details: p.message.work_details
-										});
-										frm.refresh_field(mySectionFieldName);
-										loop_defaults(i+1);
-								})
-							} else if (mySection == 'Paints Included') {
-								frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['name'])
-									.then(p => {
-										let row = frm.add_child(mySectionFieldName, {
-											paint: p.message.name
-										});
-										frm.refresh_field(mySectionFieldName);
-										loop_defaults(i+1);
-								})
-							} else if (mySection == 'Internal Colours Included') {
-								frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['name'])
-									.then(p => {
-										let row = frm.add_child(mySectionFieldName, {
-											internal_colour_included: p.message.name
-										});
-										frm.refresh_field(mySectionFieldName);
-										loop_defaults(i+1);
-								})
-							} else if (mySection == 'External Colours Included') {
-								frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['name'])
-									.then(p => {
-										let row = frm.add_child(mySectionFieldName, {
-											external_colour_included: p.message.name
-										});
-										frm.refresh_field(mySectionFieldName);
-										loop_defaults(i+1);
-								})
-							}
-						})(0);
-					})
-			}//,
-			// function(){
-				// msgprint('you selected no');
-			// }
-		)
+		if (!job_type_timeout){
+			frappe.confirm(
+				'Would you like to remove all current Print Wording entries and replace with defaults?',
+				function(){
+					set_job_type(frm, true);
+				},
+				function(){
+					set_job_type(frm, false);
+				}
+			)
+		}
+		job_type_timeout = setTimeout(job_type_change, 1000); // This has been added to stop the confirm question being asked twice.
 	},
 	customer(frm){
 		if (frm.doc.customer){
@@ -173,20 +97,34 @@ frappe.ui.form.on('Quotes', {
 		calc_costing_gst(frm);
 	},
 	add_standard_internal_colours_included(frm){
-		frm.add_child('internal_colours_included', {
-			internal_colour_included: frm.doc.add_standard_internal_colours_included
-		});
-		frm.doc.add_standard_internal_colours_included = '';
-		frm.refresh_field('add_standard_internal_colours_included');
-		frm.refresh_field('internal_colours_included');
+		if (frm.doc.add_standard_internal_colours_included){
+			frm.add_child('internal_colours_included', {
+				internal_colour_included: frm.doc.add_standard_internal_colours_included
+			});
+			frm.doc.add_standard_internal_colours_included = '';
+			frm.refresh_field('add_standard_internal_colours_included');
+			frm.refresh_field('internal_colours_included');
+		}
 	},
 	add_standard_external_colours_included(frm){
-		frm.add_child('external_colours_included', {
-			external_colour_included: frm.doc.add_standard_external_colours_included
-		});
-		frm.doc.add_standard_external_colours_included = '';
-		frm.refresh_field('add_standard_external_colours_included');
-		frm.refresh_field('external_colours_included');
+		if (frm.doc.add_standard_external_colours_included){
+			frm.add_child('external_colours_included', {
+				external_colour_included: frm.doc.add_standard_external_colours_included
+			});
+			frm.doc.add_standard_external_colours_included = '';
+			frm.refresh_field('add_standard_external_colours_included');
+			frm.refresh_field('external_colours_included');
+		}
+	},
+	add_standard_paints(frm){
+		if (frm.doc.add_standard_paints){
+			frm.add_child('paints_included', {
+				paint: frm.doc.add_standard_paints
+			});
+			frm.doc.add_standard_paints = '';
+			frm.refresh_field('add_standard_paints');
+			frm.refresh_field('paints_included');
+		}
 	}
 });
 
@@ -272,3 +210,87 @@ frappe.ui.form.on('Quote Works Included', {
 // 		});
 // 	},
 // });
+
+function set_job_type(frm, clear_existing){
+	// Get list of default entries from Job Type Defaults and add them to this quote
+	if (clear_existing){
+		frm.doc.quote_details_start = [];
+		frm.refresh_field('quote_details_start');
+		frm.doc.works_included = [];
+		frm.refresh_field('works_included');
+		frm.doc.paints_included = [];
+		frm.refresh_field('paints_included');
+		frm.doc.internal_colours_included = [];
+		frm.refresh_field('internal_colours_included');
+		frm.doc.external_colours_included = [];
+		frm.refresh_field('external_colours_included');
+		frm.doc.quote_details_end = [];
+		frm.refresh_field('quote_details_end');
+		frm.doc.final_notes = [];
+		frm.refresh_field('final_notes');
+	}
+	frappe.db.get_doc('Job Types', frm.doc.job_type)
+		.then(r => {
+			var myDefaults = r.defaults;
+			(function loop_defaults(i){
+				if (i == myDefaults.length) return; // jumps out of loop_defaults
+				var mySection = myDefaults[i].section;
+				var mySectionFieldName = mySection.toLowerCase().replaceAll(' ','_');
+				if (mySection == 'Quote Details Start' ||  
+					mySection == 'Quote Details End' || 
+					mySection == 'Final Notes'){
+					frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['paragraph_name', 'paragraph_heading', 'paragraph_content'])
+						.then(p => {
+							let row = frm.add_child(mySectionFieldName, {
+								paragraph_name: p.message.paragraph_name,
+								heading: p.message.paragraph_heading,
+								content: p.message.paragraph_content,
+							});
+							frm.refresh_field(mySectionFieldName);
+							loop_defaults(i+1);
+						})
+				} else if (mySection == 'Works Included') {
+					frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['work_type', 'work_details'])
+						.then(p => {
+							let row = frm.add_child(mySectionFieldName, {
+								work_type: p.message.work_type,
+								work_details: p.message.work_details
+							});
+							frm.refresh_field(mySectionFieldName);
+							loop_defaults(i+1);
+					})
+				} else if (mySection == 'Paints Included') {
+					frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['name'])
+						.then(p => {
+							let row = frm.add_child(mySectionFieldName, {
+								paint: p.message.name
+							});
+							frm.refresh_field(mySectionFieldName);
+							loop_defaults(i+1);
+					})
+				} else if (mySection == 'Internal Colours Included') {
+					frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['name'])
+						.then(p => {
+							let row = frm.add_child(mySectionFieldName, {
+								internal_colour_included: p.message.name
+							});
+							frm.refresh_field(mySectionFieldName);
+							loop_defaults(i+1);
+					})
+				} else if (mySection == 'External Colours Included') {
+					frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['name'])
+						.then(p => {
+							let row = frm.add_child(mySectionFieldName, {
+								external_colour_included: p.message.name
+							});
+							frm.refresh_field(mySectionFieldName);
+							loop_defaults(i+1);
+					})
+				}
+			})(0);
+		})
+}
+
+function job_type_change(){
+	job_type_timeout = null;
+}
