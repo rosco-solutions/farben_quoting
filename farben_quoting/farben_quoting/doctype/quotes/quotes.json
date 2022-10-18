@@ -56,6 +56,7 @@
   "quote_details_section",
   "quote_details_start",
   "works_included",
+  "add_standard_paints",
   "paints_included",
   "add_standard_internal_colours_included",
   "internal_colours_included",
@@ -387,11 +388,17 @@
    "fieldtype": "Link",
    "label": "Add Standard External Colours Included",
    "options": "External Colours Included"
+  },
+  {
+   "fieldname": "add_standard_paints",
+   "fieldtype": "Link",
+   "label": "Add Standard Paints",
+   "options": "Paints"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-10-18 11:41:20.709563",
+ "modified": "2022-10-18 13:38:01.275487",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Quotes",

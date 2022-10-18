@@ -173,5 +173,5 @@ user_data_fields = [
 # 	"farben_quoting.auth.validate"
 # ]
 
-fixtures = ["Email Template", "States", "Title", "Help", "Job Types", "Print Wording Sections"]
+fixtures = ["Help"]
 
