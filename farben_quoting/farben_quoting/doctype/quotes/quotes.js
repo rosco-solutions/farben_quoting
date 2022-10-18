@@ -229,66 +229,68 @@ function set_job_type(frm, clear_existing){
 		frm.doc.final_notes = [];
 		frm.refresh_field('final_notes');
 	}
-	frappe.db.get_doc('Job Types', frm.doc.job_type)
-		.then(r => {
-			var myDefaults = r.defaults;
-			(function loop_defaults(i){
-				if (i == myDefaults.length) return; // jumps out of loop_defaults
-				var mySection = myDefaults[i].section;
-				var mySectionFieldName = mySection.toLowerCase().replaceAll(' ','_');
-				if (mySection == 'Quote Details Start' ||  
-					mySection == 'Quote Details End' || 
-					mySection == 'Final Notes'){
-					frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['paragraph_name', 'paragraph_heading', 'paragraph_content'])
-						.then(p => {
-							let row = frm.add_child(mySectionFieldName, {
-								paragraph_name: p.message.paragraph_name,
-								heading: p.message.paragraph_heading,
-								content: p.message.paragraph_content,
-							});
-							frm.refresh_field(mySectionFieldName);
-							loop_defaults(i+1);
+	if (frm.doc.job_type){
+		frappe.db.get_doc('Job Types', frm.doc.job_type)
+			.then(r => {
+				var myDefaults = r.defaults;
+				(function loop_defaults(i){
+					if (i == myDefaults.length) return; // jumps out of loop_defaults
+					var mySection = myDefaults[i].section;
+					var mySectionFieldName = mySection.toLowerCase().replaceAll(' ','_');
+					if (mySection == 'Quote Details Start' ||  
+						mySection == 'Quote Details End' || 
+						mySection == 'Final Notes'){
+						frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['paragraph_name', 'paragraph_heading', 'paragraph_content'])
+							.then(p => {
+								let row = frm.add_child(mySectionFieldName, {
+									paragraph_name: p.message.paragraph_name,
+									heading: p.message.paragraph_heading,
+									content: p.message.paragraph_content,
+								});
+								frm.refresh_field(mySectionFieldName);
+								loop_defaults(i+1);
+							})
+					} else if (mySection == 'Works Included') {
+						frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['work_type', 'work_details'])
+							.then(p => {
+								let row = frm.add_child(mySectionFieldName, {
+									work_type: p.message.work_type,
+									work_details: p.message.work_details
+								});
+								frm.refresh_field(mySectionFieldName);
+								loop_defaults(i+1);
 						})
-				} else if (mySection == 'Works Included') {
-					frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['work_type', 'work_details'])
-						.then(p => {
-							let row = frm.add_child(mySectionFieldName, {
-								work_type: p.message.work_type,
-								work_details: p.message.work_details
-							});
-							frm.refresh_field(mySectionFieldName);
-							loop_defaults(i+1);
-					})
-				} else if (mySection == 'Paints Included') {
-					frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['name'])
-						.then(p => {
-							let row = frm.add_child(mySectionFieldName, {
-								paint: p.message.name
-							});
-							frm.refresh_field(mySectionFieldName);
-							loop_defaults(i+1);
-					})
-				} else if (mySection == 'Internal Colours Included') {
-					frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['name'])
-						.then(p => {
-							let row = frm.add_child(mySectionFieldName, {
-								internal_colour_included: p.message.name
-							});
-							frm.refresh_field(mySectionFieldName);
-							loop_defaults(i+1);
-					})
-				} else if (mySection == 'External Colours Included') {
-					frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['name'])
-						.then(p => {
-							let row = frm.add_child(mySectionFieldName, {
-								external_colour_included: p.message.name
-							});
-							frm.refresh_field(mySectionFieldName);
-							loop_defaults(i+1);
-					})
-				}
-			})(0);
-		})
+					} else if (mySection == 'Paints Included') {
+						frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['name'])
+							.then(p => {
+								let row = frm.add_child(mySectionFieldName, {
+									paint: p.message.name
+								});
+								frm.refresh_field(mySectionFieldName);
+								loop_defaults(i+1);
+						})
+					} else if (mySection == 'Internal Colours Included') {
+						frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['name'])
+							.then(p => {
+								let row = frm.add_child(mySectionFieldName, {
+									internal_colour_included: p.message.name
+								});
+								frm.refresh_field(mySectionFieldName);
+								loop_defaults(i+1);
+						})
+					} else if (mySection == 'External Colours Included') {
+						frappe.db.get_value(myDefaults[i].print_wording_type, myDefaults[i].default_entry, ['name'])
+							.then(p => {
+								let row = frm.add_child(mySectionFieldName, {
+									external_colour_included: p.message.name
+								});
+								frm.refresh_field(mySectionFieldName);
+								loop_defaults(i+1);
+						})
+					}
+				})(0);
+			})
+		}
 }
 
 function job_type_change(){
