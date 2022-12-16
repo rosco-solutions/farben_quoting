@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Farben Quoting</span>\",\"col\":12}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quotes\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Help\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Options\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"General Setup\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Template Details\",\"col\":4}}]",
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Farben Quoting</span>\",\"col\":12}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quotes\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Email Inbox\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Help\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Options\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"General Setup\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Template Details\",\"col\":4}}]",
  "creation": "2022-11-23 11:59:18.360653",
  "docstatus": 0,
  "doctype": "Workspace",
@@ -215,7 +215,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-12-13 18:10:33.046428",
+ "modified": "2022-12-17 10:52:03.932310",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Farben Quoting",
@@ -231,6 +231,13 @@
    "doc_view": "List",
    "label": "Quotes",
    "link_to": "Quotes",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Email Inbox",
+   "link_to": "Communication",
    "type": "DocType"
   },
   {
