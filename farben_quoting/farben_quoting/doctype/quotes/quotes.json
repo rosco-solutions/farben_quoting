@@ -124,7 +124,7 @@
    "fieldname": "duration_type",
    "fieldtype": "Select",
    "label": "Duration Type",
-   "options": "days\nweeks"
+   "options": "day\ndays\nweek\nweeks"
   },
   {
    "fieldname": "commencement_date",
@@ -398,10 +398,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-10-18 13:38:01.275487",
+ "modified": "2023-02-14 10:51:18.021291",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Quotes",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -434,5 +435,6 @@
  "show_name_in_global_search": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
+ "states": [],
  "track_changes": 1
 }
