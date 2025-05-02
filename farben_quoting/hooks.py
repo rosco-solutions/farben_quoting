@@ -173,5 +173,5 @@ user_data_fields = [
 # 	"farben_quoting.auth.validate"
 # ]
 
-fixtures = ["Help"]
+fixtures = ["Help", {"dt": "Custom Field", "filters": [["module", "like", "%Farben Quoting%"]]}]
 
