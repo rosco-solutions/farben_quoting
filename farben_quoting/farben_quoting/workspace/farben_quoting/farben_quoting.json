@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"vuHi73aalA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Farben Quoting</span>\",\"col\":12}},{\"id\":\"6rSbv8_bnE\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Qw-Kfr7El-\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quotes\",\"col\":3}},{\"id\":\"uHVOpeKghQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Email Inbox\",\"col\":3}},{\"id\":\"XKeEwFD5-h\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customers\",\"col\":3}},{\"id\":\"tGqvyoUM8U\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Help\",\"col\":3}},{\"id\":\"mM68unobvj\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"WkUlP7OKSM\",\"type\":\"card\",\"data\":{\"card_name\":\"Options\",\"col\":4}},{\"id\":\"26Fv2MAIqX\",\"type\":\"card\",\"data\":{\"card_name\":\"General Setup\",\"col\":4}},{\"id\":\"4F0cBibtSR\",\"type\":\"card\",\"data\":{\"card_name\":\"Template Details\",\"col\":4}}]",
+ "content": "[{\"id\":\"vuHi73aalA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Farben Quoting</span>\",\"col\":12}},{\"id\":\"6rSbv8_bnE\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"reuN9ry9C7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quotation\",\"col\":3}},{\"id\":\"Qw-Kfr7El-\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quotes (old)\",\"col\":3}},{\"id\":\"uHVOpeKghQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Email Inbox\",\"col\":3}},{\"id\":\"XKeEwFD5-h\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customers\",\"col\":3}},{\"id\":\"tGqvyoUM8U\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Help\",\"col\":3}},{\"id\":\"mM68unobvj\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"WkUlP7OKSM\",\"type\":\"card\",\"data\":{\"card_name\":\"Options\",\"col\":4}},{\"id\":\"26Fv2MAIqX\",\"type\":\"card\",\"data\":{\"card_name\":\"General Setup\",\"col\":4}},{\"id\":\"4F0cBibtSR\",\"type\":\"card\",\"data\":{\"card_name\":\"Template Details\",\"col\":4}}]",
  "creation": "2022-11-23 11:59:18.360653",
  "custom_blocks": [],
  "docstatus": 0,
@@ -217,7 +217,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-01-25 11:27:39.821651",
+ "modified": "2025-05-08 16:40:31.999048",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Farben Quoting",
@@ -232,6 +232,14 @@
   {
    "color": "Grey",
    "doc_view": "List",
+   "label": "Quotation",
+   "link_to": "Quotation",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
    "label": "Customers",
    "link_to": "Customers",
    "stats_filter": "[]",
@@ -240,8 +248,9 @@
   {
    "color": "Grey",
    "doc_view": "List",
-   "label": "Quotes",
+   "label": "Quotes (old)",
    "link_to": "Quotes",
+   "stats_filter": "[]",
    "type": "DocType"
   },
   {

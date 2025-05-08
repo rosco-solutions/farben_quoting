@@ -1,6 +1,29 @@
 var job_type_timeout;
 
 frappe.ui.form.on("Quotation", {
+	refresh: function(frm) {
+		if (frm.is_new()) {
+			var items = frappe.db.get_list('Item', {
+				fields: ['item_code'],
+				filters: {'custom_use_as_default_in_quotation': 1}
+			}).then(records => {
+				if (records.length > 0) {
+					for (var i = 0; i < records.length; i++) {
+						if (frm.doc.items[i] && !frm.doc.items[i].item_code){
+							frm.doc.items[i].item_code = records[i].item_code;
+							frm.doc.items[i].qty = 1;
+						} else {
+							frm.add_child('items', {
+								item_code: records[i].item_code,
+								qty: 1,
+							});
+						}	
+					}
+					frm.refresh_field('items');
+				}
+			})
+		}
+	},
     custom_job_type: function(frm) {
 		if (!job_type_timeout){
 			frappe.confirm(
