@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"vuHi73aalA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Farben Quoting</span>\",\"col\":12}},{\"id\":\"6rSbv8_bnE\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"reuN9ry9C7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quotation\",\"col\":3}},{\"id\":\"Qw-Kfr7El-\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quotes (old)\",\"col\":3}},{\"id\":\"uHVOpeKghQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Email Inbox\",\"col\":3}},{\"id\":\"XKeEwFD5-h\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customers\",\"col\":3}},{\"id\":\"tGqvyoUM8U\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Help\",\"col\":3}},{\"id\":\"mM68unobvj\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"WkUlP7OKSM\",\"type\":\"card\",\"data\":{\"card_name\":\"Options\",\"col\":4}},{\"id\":\"26Fv2MAIqX\",\"type\":\"card\",\"data\":{\"card_name\":\"General Setup\",\"col\":4}},{\"id\":\"4F0cBibtSR\",\"type\":\"card\",\"data\":{\"card_name\":\"Template Details\",\"col\":4}}]",
+ "content": "[{\"id\":\"vuHi73aalA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Farben Quoting</span>\",\"col\":12}},{\"id\":\"6rSbv8_bnE\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"reuN9ry9C7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quotation\",\"col\":3}},{\"id\":\"uHVOpeKghQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Email Inbox\",\"col\":3}},{\"id\":\"XKeEwFD5-h\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer\",\"col\":3}},{\"id\":\"tGqvyoUM8U\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Help\",\"col\":3}},{\"id\":\"mM68unobvj\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"WkUlP7OKSM\",\"type\":\"card\",\"data\":{\"card_name\":\"Options\",\"col\":4}},{\"id\":\"26Fv2MAIqX\",\"type\":\"card\",\"data\":{\"card_name\":\"General Setup\",\"col\":4}},{\"id\":\"4F0cBibtSR\",\"type\":\"card\",\"data\":{\"card_name\":\"Template Details\",\"col\":4}},{\"id\":\"fm20-0G0XA\",\"type\":\"card\",\"data\":{\"card_name\":\"Obsolete\",\"col\":4}}]",
  "creation": "2022-11-23 11:59:18.360653",
  "custom_blocks": [],
  "docstatus": 0,
@@ -12,84 +12,6 @@
  "is_hidden": 0,
  "label": "Farben Quoting",
  "links": [
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "General Setup",
-   "link_count": 7,
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Signatures",
-   "link_count": 0,
-   "link_to": "Signatures",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Job Types",
-   "link_count": 0,
-   "link_to": "Job Types",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Payment Terms",
-   "link_count": 0,
-   "link_to": "Payment Terms",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Quote Status",
-   "link_count": 0,
-   "link_to": "Quote Status",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "States",
-   "link_count": 0,
-   "link_to": "States",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Title",
-   "link_count": 0,
-   "link_to": "Title",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Print Wording Sections",
-   "link_count": 0,
-   "link_to": "Print Wording Sections",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
   {
    "hidden": 0,
    "is_query_report": 0,
@@ -152,29 +74,10 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Options",
-   "link_count": 6,
+   "link_count": 4,
+   "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Companies",
-   "link_count": 0,
-   "link_to": "Companies",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Customers",
-   "link_count": 0,
-   "link_to": "Customers",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
   },
   {
    "hidden": 0,
@@ -215,9 +118,137 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "General Setup",
+   "link_count": 7,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Signatures",
+   "link_count": 0,
+   "link_to": "Signatures",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Job Types",
+   "link_count": 0,
+   "link_to": "Job Types",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Terms and Conditions",
+   "link_count": 0,
+   "link_to": "Terms and Conditions",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Quote Status",
+   "link_count": 0,
+   "link_to": "Quote Status",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "States",
+   "link_count": 0,
+   "link_to": "States",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Title",
+   "link_count": 0,
+   "link_to": "Title",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Print Wording Sections",
+   "link_count": 0,
+   "link_to": "Print Wording Sections",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Obsolete",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Quotes (old)",
+   "link_count": 0,
+   "link_to": "Quotes",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Companies (old)",
+   "link_count": 0,
+   "link_to": "Companies",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customers (old)",
+   "link_count": 0,
+   "link_to": "Customers",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Payment Terms (old)",
+   "link_count": 0,
+   "link_to": "Payment Terms",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-05-08 16:40:31.999048",
+ "modified": "2025-05-21 11:31:18.606966",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Farben Quoting",
@@ -240,16 +271,8 @@
   {
    "color": "Grey",
    "doc_view": "List",
-   "label": "Customers",
-   "link_to": "Customers",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Quotes (old)",
-   "link_to": "Quotes",
+   "label": "Customer",
+   "link_to": "Customer",
    "stats_filter": "[]",
    "type": "DocType"
   },

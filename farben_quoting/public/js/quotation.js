@@ -2,19 +2,25 @@ var job_type_timeout;
 
 frappe.ui.form.on("Quotation", {
 	refresh: function(frm) {
-		if (frm.is_new()) {
-			var items = frappe.db.get_list('Item', {
-				fields: ['item_code'],
+		if (frm.doc.items.length == 1){
+			frappe.db.get_list('Item', {
+				fields: ['item_code', 'item_name', 'stock_uom', 'description'],
 				filters: {'custom_use_as_default_in_quotation': 1}
 			}).then(records => {
 				if (records.length > 0) {
 					for (var i = 0; i < records.length; i++) {
 						if (frm.doc.items[i] && !frm.doc.items[i].item_code){
 							frm.doc.items[i].item_code = records[i].item_code;
+							frm.doc.items[i].item_name = records[i].item_name;
+							frm.doc.items[i].uom = records[i].stock_uom;
+							frm.doc.items[i].description = records[i].description;
 							frm.doc.items[i].qty = 1;
 						} else {
 							frm.add_child('items', {
 								item_code: records[i].item_code,
+								item_name: records[i].item_name,
+								uom: records[i].stock_uom,
+								description: records[i].description,
 								qty: 1,
 							});
 						}	
