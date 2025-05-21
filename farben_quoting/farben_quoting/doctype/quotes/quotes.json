@@ -8,6 +8,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "general_tab",
   "job_section",
   "job_type",
   "status",
@@ -19,6 +20,7 @@
   "csp",
   "phone",
   "email",
+  "tab_break_xzmv",
   "job_address_section",
   "job_address_line_1",
   "job_address_line_2",
@@ -394,11 +396,21 @@
    "fieldtype": "Link",
    "label": "Add Standard Paints",
    "options": "Paints"
+  },
+  {
+   "fieldname": "tab_break_xzmv",
+   "fieldtype": "Tab Break",
+   "label": "Job Details"
+  },
+  {
+   "fieldname": "general_tab",
+   "fieldtype": "Tab Break",
+   "label": "General"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-02-14 10:51:18.021291",
+ "modified": "2025-05-02 11:40:21.813833",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Quotes",

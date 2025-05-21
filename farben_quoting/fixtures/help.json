@@ -5,9 +5,6 @@
   "doctype": "Help",
   "modified": "2021-10-22 16:40:08.372782",
   "name": "Adding a Quote",
-  "parent": null,
-  "parentfield": null,
-  "parenttype": null,
   "title": "Adding a Quote",
   "video": "/files/How to Add a Quote.mp4"
  },
@@ -17,9 +14,6 @@
   "doctype": "Help",
   "modified": "2021-10-27 11:19:30.713358",
   "name": "Formatting the Quote PDF Output",
-  "parent": null,
-  "parentfield": null,
-  "parenttype": null,
   "title": "Formatting the Quote PDF Output",
   "video": "/files/Formatting The Quote PDF.mp4"
  },
@@ -29,9 +23,6 @@
   "doctype": "Help",
   "modified": "2021-10-27 11:20:39.260186",
   "name": "Emailing a Quote",
-  "parent": null,
-  "parentfield": null,
-  "parenttype": null,
   "title": "Emailing a Quote",
   "video": "/files/Sending Quote Email.mp4"
  },
@@ -41,9 +32,6 @@
   "doctype": "Help",
   "modified": "2021-10-27 11:21:46.940824",
   "name": "Searching for a Quote",
-  "parent": null,
-  "parentfield": null,
-  "parenttype": null,
   "title": "Searching for a Quote",
   "video": "/files/Searching for a Quote.mp4"
  },
@@ -53,9 +41,6 @@
   "doctype": "Help",
   "modified": "2021-10-27 11:23:03.851376",
   "name": "Overview of Option Lists",
-  "parent": null,
-  "parentfield": null,
-  "parenttype": null,
   "title": "Overview of Option Lists",
   "video": "/files/Overview of Option Lists.mp4"
  },
@@ -65,9 +50,6 @@
   "doctype": "Help",
   "modified": "2021-10-27 11:23:56.214467",
   "name": "Setting up a Job Type",
-  "parent": null,
-  "parentfield": null,
-  "parenttype": null,
   "title": "Setting up a Job Type",
   "video": "/files/Adding and Updating a Job Type.mp4"
  }
