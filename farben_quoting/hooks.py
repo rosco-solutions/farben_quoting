@@ -174,6 +174,6 @@ user_data_fields = [
 # ]
 
 fixtures = ["Help", 
-            {"dt": "Custom Field", "filters": [["module", "like", "%Farben Quoting%"]]}, 
-            {"dt": "Item", "filters": [["custom_use_as_default_in_quotation", "=", "1"]]}
+            {"dt": "Custom Field", "filters": [["module", "like", "%Farben Quoting%"]]}
+            # {"dt": "Item", "filters": [["custom_use_as_default_in_quotation", "=", "1"]]}
 			]
