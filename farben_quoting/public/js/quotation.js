@@ -4,10 +4,12 @@ frappe.ui.form.on("Quotation", {
 	refresh: function(frm) {
 		if (frm.doc.items.length == 1){
 			frappe.db.get_list('Item', {
-				fields: ['item_code', 'item_name', 'stock_uom', 'description'],
-				filters: {'custom_use_as_default_in_quotation': 1}
+				fields: ['item_code', 'item_name', 'stock_uom', 'description', 'custom_item_sequence'],
+				filters: {'custom_use_as_default_in_quotation': 1},
+				order_by: 'custom_item_sequence asc'
 			}).then(records => {
 				if (records.length > 0) {
+
 					for (var i = 0; i < records.length; i++) {
 						if (frm.doc.items[i] && !frm.doc.items[i].item_code){
 							frm.doc.items[i].item_code = records[i].item_code;
