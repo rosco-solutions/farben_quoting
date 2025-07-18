@@ -8,7 +8,6 @@ app_icon = "octicon octicon-file-directory"
 app_color = "green"
 app_email = "support@rosco.solutions"
 app_license = "MIT"
-app_version = "1.0.0"
 
 # Includes in <head>
 # ------------------
