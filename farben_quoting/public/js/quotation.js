@@ -17,6 +17,7 @@ frappe.ui.form.on("Quotation", {
 							frm.doc.items[i].uom = records[i].stock_uom;
 							frm.doc.items[i].description = records[i].description;
 							frm.doc.items[i].qty = 1;
+							frm.doc.items[i].rate = 0; // Reset rate to 0
 						} else {
 							frm.add_child('items', {
 								item_code: records[i].item_code,
@@ -24,6 +25,7 @@ frappe.ui.form.on("Quotation", {
 								uom: records[i].stock_uom,
 								description: records[i].description,
 								qty: 1,
+								rate: 0 // Reset rate to 0
 							});
 						}	
 					}
