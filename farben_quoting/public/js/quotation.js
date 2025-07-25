@@ -33,6 +33,19 @@ frappe.ui.form.on("Quotation", {
 				}
 			})
 		}
+
+		if (frm.doc.contact_person) {
+			frappe.db.get_value('Contact', frm.doc.contact_person, 'first_name')
+				.then(r => {
+					if (r.message && r.message.first_name) {
+						frm.set_value('custom_contact_first_name', r.message.first_name);
+					} else {
+						frm.set_value('custom_contact_first_name', '');
+					}
+				});
+		} else {
+			frm.set_value('custom_contact_first_name', '');
+		}
 	},
     custom_job_type: function(frm) {
 		if (!job_type_timeout){
@@ -76,6 +89,33 @@ frappe.ui.form.on("Quotation", {
 			frm.doc.custom_add_standard_paints = '';
 			frm.refresh_field('custom_add_standard_paints');
 			frm.refresh_field('custom_paints_included');
+		}
+	},
+	contact_person: function(frm) {
+		if (frm.doc.contact_person) {
+			frappe.db.get_value('Contact', frm.doc.contact_person, 'first_name')
+				.then(r => {
+					if (r.message && r.message.first_name) {
+						frm.set_value('custom_contact_first_name', r.message.first_name);
+					} else {
+						frm.set_value('custom_contact_first_name', '');
+					}
+				});
+		} else {
+			frm.set_value('custom_contact_first_name', '');
+		}
+	},
+	party_name: function(frm) {
+		if (frm.doc.party_name) {
+			if (frm.doc.items.length > 0){
+				// Timeout is used to allow the form to refresh before resetting the rates.
+				setTimeout(() => {
+					for (var i = 0; i < frm.doc.items.length; i++) {
+						frm.doc.items[i].rate = 0; // Reset rate to 0
+					}	
+					frm.refresh_field('items');
+				}, 2000);
+			}					
 		}
 	}	
 });
