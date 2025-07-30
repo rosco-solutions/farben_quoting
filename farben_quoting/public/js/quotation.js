@@ -105,19 +105,19 @@ frappe.ui.form.on("Quotation", {
 			frm.set_value('custom_contact_first_name', '');
 		}
 	},
-	party_name: function(frm) {
-		if (frm.doc.party_name) {
-			if (frm.doc.items.length > 0){
-				// Timeout is used to allow the form to refresh before resetting the rates.
-				setTimeout(() => {
-					for (var i = 0; i < frm.doc.items.length; i++) {
-						frm.doc.items[i].rate = 0; // Reset rate to 0
-					}	
-					frm.refresh_field('items');
-				}, 2000);
-			}					
-		}
-	}	
+	// party_name: function(frm) {
+	// 	if (frm.doc.party_name) {
+	// 		if (frm.doc.items.length > 0){
+	// 			// Timeout is used to allow the form to refresh before resetting the rates.
+	// 			setTimeout(() => {
+	// 				for (var i = 0; i < frm.doc.items.length; i++) {
+	// 					frm.doc.items[i].rate = 0; // Reset rate to 0
+	// 				}	
+	// 				frm.refresh_field('items');
+	// 			}, 2000);
+	// 		}					
+	// 	}
+	// }	
 });
 
 function set_job_type(frm, clear_existing){
