@@ -120,22 +120,49 @@ frappe.ui.form.on("Quotation", {
 	// }	
 });
 
+frappe.ui.form.on('Quote Details', {
+	paragraph_name(frm, cdt, cdn) {
+		var child = locals[cdt][cdn];
+		if (child.paragraph_name) {
+			frappe.db.get_value("Standard Paragraphs", {"paragraph_name": child.paragraph_name}, ["paragraph_heading", "paragraph_content"], function(value) {
+				child.heading = value.paragraph_heading;
+				child.content = value.paragraph_content;
+				frm.refresh_field('custom_quote_details_start');
+				frm.refresh_field('custom_quote_details_end');
+				frm.refresh_field('custom_final_notes');
+			});
+		};
+	}
+});
+
+frappe.ui.form.on('Quote Works Included', {
+	work_type(frm, cdt, cdn) {
+		var child = locals[cdt][cdn];
+		if (child.work_type) {
+			frappe.db.get_value("Works Included", {"work_type": child.work_type}, "work_details", function(value) {
+				child.work_details = value.work_details;
+				frm.refresh_field('custom_works_included');
+			});
+		};
+	}
+});
+
 function set_job_type(frm, clear_existing){
 	// Get list of default entries from Job Type Defaults and add them to this quote
 	if (clear_existing){
-		frm.doc.quote_details_start = [];
+		frm.doc.custom_quote_details_start = [];
 		frm.refresh_field('custom_quote_details_start');
-		frm.doc.works_included = [];
+		frm.doc.custom_works_included = [];
 		frm.refresh_field('custom_works_included');
-		frm.doc.paints_included = [];
+		frm.doc.custom_paints_included = [];
 		frm.refresh_field('custom_paints_included');
-		frm.doc.internal_colours_included = [];
+		frm.doc.custom_internal_colours_included = [];
 		frm.refresh_field('custom_internal_colours_included');
-		frm.doc.external_colours_included = [];
+		frm.doc.custom_external_colours_included = [];
 		frm.refresh_field('custom_external_colours_included');
-		frm.doc.quote_details_end = [];
+		frm.doc.custom_quote_details_end = [];
 		frm.refresh_field('custom_quote_details_end');
-		frm.doc.final_notes = [];
+		frm.doc.custom_final_notes = [];
 		frm.refresh_field('custom_final_notes');
 	}
 	if (frm.doc.custom_job_type){
