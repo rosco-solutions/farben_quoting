@@ -1,0 +1,198 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:[ID]",
+ "creation": "2025-12-11 14:50:00.111350",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "your_name",
+  "project",
+  "date_worked",
+  "start_time_section",
+  "column_break_gvzc",
+  "start_time_hr",
+  "start_time_min",
+  "section_break_ipvy",
+  "end_time_hr",
+  "end_time_min",
+  "section_break_exwk",
+  "duration",
+  "lunch_included",
+  "travel",
+  "meal",
+  "naming_series",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "description": "Please select your name from the list",
+   "fieldname": "your_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Your Name",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "description": "Select the Job you are working on.",
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "lunch_included",
+   "fieldtype": "Check",
+   "label": "Lunch Included"
+  },
+  {
+   "default": "0",
+   "description": "Tick if using own vehicle to & from work.",
+   "fieldname": "travel",
+   "fieldtype": "Check",
+   "label": "Travel"
+  },
+  {
+   "default": "0",
+   "description": "Tick if authorised meal allowance.",
+   "fieldname": "meal",
+   "fieldtype": "Check",
+   "label": "Meal"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "ID",
+   "options": "TS"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Float",
+   "label": "Duration (hrs)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Farben Job Traker",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "date_worked",
+   "fieldtype": "Date",
+   "label": "Date Worked"
+  },
+  {
+   "fieldname": "start_time_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "start_time_hr",
+   "fieldtype": "Select",
+   "label": "Start Time",
+   "options": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23",
+   "width": "10"
+  },
+  {
+   "fieldname": "start_time_min",
+   "fieldtype": "Select",
+   "options": "00\n05\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55",
+   "width": "10"
+  },
+  {
+   "fieldname": "end_time_hr",
+   "fieldtype": "Select",
+   "label": "End Time",
+   "options": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23"
+  },
+  {
+   "fieldname": "end_time_min",
+   "fieldtype": "Select",
+   "options": "00\n05\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55"
+  },
+  {
+   "fieldname": "column_break_gvzc",
+   "fieldtype": "Column Break",
+   "width": "10"
+  },
+  {
+   "fieldname": "section_break_exwk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_ipvy",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-12-12 14:51:19.188102",
+ "modified_by": "Administrator",
+ "module": "Farben Quoting",
+ "name": "Farben Job Traker",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
