@@ -45,7 +45,28 @@ frappe.ui.form.on("Farben Job Tracker", {
             'display': 'inline-block',
             'width': '33%' // Set width to prevent wrapping
         });
+        
+        // Add the custom button to the header
+        frm.add_custom_button(__('Close'), function() {
+            // Check if document is in Draft (0)
+            if (frm.doc.docstatus === 0) {
+                
+                // Only save if there are unsaved changes (is_dirty)
+                if (frm.is_dirty()) {
+                    frm.save().then(() => {
+                        frappe.show_alert({message: __('Saved and Closed'), indicator: 'green'});
+                        frappe.set_route('List', 'Farben Job Tracker');
+                    });
+                } else {
+                    // It's a draft but nothing changed, just close
+                    frappe.set_route('List', 'Farben Job Tracker');
+                }
 
+            } else {
+                // Scenario: Document is Submitted (1) or Cancelled (2)
+                frappe.set_route('List', 'Farben Job Tracker');
+            }
+        });
     },
     end_time_hr: function(frm) {
         // Trigger the calculation when the end_time field changes
