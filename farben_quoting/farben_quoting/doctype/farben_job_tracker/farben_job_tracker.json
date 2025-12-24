@@ -84,7 +84,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Farben Job Traker",
+   "options": "Farben Job Tracker",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
@@ -215,7 +215,7 @@
  "modified": "2025-12-24 18:06:25.480454",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
- "name": "Farben Job Traker",
+ "name": "Farben Job Tracker",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [

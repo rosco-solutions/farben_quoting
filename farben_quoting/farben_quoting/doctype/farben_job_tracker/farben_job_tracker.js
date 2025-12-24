@@ -1,7 +1,7 @@
 // Copyright (c) 2025, Rosco Solutions and contributors
 // For license information, please see license.txt
 
-frappe.ui.form.on("Farben Job Traker", {
+frappe.ui.form.on("Farben Job Tracker", {
     refresh: function(frm) {
         // set start and end times to be correct size and sit next to each other.
         $(`[data-fieldname="${'start_time_hr'}"]`).css({

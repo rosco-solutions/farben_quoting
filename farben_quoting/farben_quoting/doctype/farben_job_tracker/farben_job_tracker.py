@@ -4,7 +4,7 @@ from frappe.utils import now_datetime, getdate, add_days
 import datetime
 from datetime import datetime
 
-class FarbenJobTraker(Document):
+class FarbenJobTracker(Document):
 	def on_submit(self):
 		# Call the helper function to create the timesheet
 		self.create_linked_timesheet()

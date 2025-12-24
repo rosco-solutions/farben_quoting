@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestFarbenJobTraker(FrappeTestCase):
+class TestFarbenJobTracker(FrappeTestCase):
 	pass
