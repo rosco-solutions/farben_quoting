@@ -1,5 +1,12 @@
 from . import __version__ as app_version
 
+from erpnext.projects.doctype.timesheet.timesheet import Timesheet
+from farben_quoting.api import custom_calculate_hours,  custom_set_to_time
+
+# Monkey patch the method: Replace the original with your custom one
+Timesheet.calculate_hours = custom_calculate_hours
+Timesheet.set_to_time = custom_set_to_time
+
 app_name = "farben_quoting"
 app_title = "Farben Quoting"
 app_publisher = "Rosco Solutions"
@@ -93,11 +100,9 @@ doctype_js = {
 # Hook on document methods and events
 
 # doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-#	}
+# 	"Timesheet": {
+#         "validate": "farben_quoting.api.calculate_lunch_deduction"
+#     }
 # }
 
 # Scheduled Tasks

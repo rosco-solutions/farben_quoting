@@ -9,21 +9,6 @@ frappe.ui.form.on('Timesheet Detail', {
     to_time: function(frm, cdt, cdn) {
         recalculate_with_lock(frm, cdt, cdn);
     },
-    // // The problem child: standard hours trigger
-    // hours: function(frm, cdt, cdn) {
-    //     if (frm._silence_hours_trigger) {
-    //         console.log("Recalculation blocked to prevent loop.");
-    //         update_billing_hours(frm, cdt, cdn);
-    //         calculate_billing_costing_amount(frm, cdt, cdn);
-    //         calculate_time_and_amount(frm);
-    //         return;
-    //     } else {
-    //         calculate_end_time(frm, cdt, cdn);
-    //         update_billing_hours(frm, cdt, cdn);
-    //         calculate_billing_costing_amount(frm, cdt, cdn);
-    //         calculate_time_and_amount(frm);
-    //     }
-    // }
 });
 
 function recalculate_with_lock(frm, cdt, cdn) {
