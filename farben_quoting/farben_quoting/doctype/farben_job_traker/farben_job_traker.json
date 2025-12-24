@@ -11,6 +11,7 @@
   "employee_name",
   "entry_type",
   "project",
+  "customer",
   "activity_type",
   "date_worked",
   "start_time_section",
@@ -71,6 +72,7 @@
    "options": "TS"
   },
   {
+   "default": "9",
    "fieldname": "duration",
    "fieldtype": "Float",
    "label": "Duration (hrs)",
@@ -155,6 +157,7 @@
    "reqd": 1
   },
   {
+   "default": "9",
    "fieldname": "payable_hours",
    "fieldtype": "Float",
    "label": "Payable Hours",
@@ -195,13 +198,21 @@
    "label": "Employee Name",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.entry_type == \"Project\"",
+   "fetch_from": "project.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-23 17:38:58.689698",
+ "modified": "2025-12-24 18:06:25.480454",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Farben Job Traker",

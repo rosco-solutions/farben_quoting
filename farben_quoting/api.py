@@ -1,7 +1,8 @@
 import frappe
 from frappe.utils import time_diff_in_hours, add_to_date, get_datetime, time_diff_in_seconds
 
-# Custom Timesheet Methods to include lunch deduction logic
+# Custom Timesheet Methods to include lunch deduction logic. These override the standard methods 
+# found in erpnext.projects.doctype.timesheet.timesheet
 
 def custom_calculate_hours(self):
     """Replaces the standard Timesheet.calculate_hours method"""

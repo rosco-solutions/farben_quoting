@@ -70,6 +70,15 @@ frappe.ui.form.on("Farben Job Traker", {
     end_ampm: function(frm) {
         calculate_duration(frm);
     },
+    entry_type: function(frm) {
+        if (frm.doc.entry_type == 'project') {
+            frm.set_value('activity_type', 'Painting');
+        } else {
+            frm.set_value('activity_type', null);
+            frm.set_value('project', null);
+            frm.set_value('customer', null);
+        } 
+    },
     lunch_included: function(frm) {
         calculate_duration(frm);
     },
