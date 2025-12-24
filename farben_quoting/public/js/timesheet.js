@@ -9,6 +9,12 @@ frappe.ui.form.on('Timesheet Detail', {
     to_time: function(frm, cdt, cdn) {
         recalculate_with_lock(frm, cdt, cdn);
     },
+    hours: function(frm, cdt, cdn) {
+        if (frm._setting_hours) {
+            return; // Exit if this change was programmatic
+        }
+        calculate_end_time(frm, cdt, cdn, true);
+    }
 });
 
 function recalculate_with_lock(frm, cdt, cdn) {
@@ -51,8 +57,8 @@ function recalculate_with_lock(frm, cdt, cdn) {
     }
 }
 
-var calculate_end_time = function (frm, cdt, cdn) {
-    if (frm._silence_hours_trigger) {
+var calculate_end_time = function (frm, cdt, cdn, force) {
+    if (frm._silence_hours_trigger && !force) {
         return; // was triggered by change in custom field, do not proceed
     }
  
@@ -65,7 +71,11 @@ var calculate_end_time = function (frm, cdt, cdn) {
 
 	let d = moment(child.from_time);
 	if (child.hours) {
-		d.add(child.hours, "hours");
+		if (child.custom_lunch_included) {
+			d.add(child.hours + 0.5, "hours");
+		} else {
+			d.add(child.hours, "hours");
+		}   
 		frm._setting_hours = true;
 		frappe.model.set_value(cdt, cdn, "to_time", d.format(frappe.defaultDatetimeFormat)).then(() => {
 			frm._setting_hours = false;
