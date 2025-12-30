@@ -1,11 +1,4 @@
 frappe.listview_settings['Farben Job Tracker'] = {
-    // onload: function(listview) {
-    //     // Manually add a filter for the hidden 'docstatus' field
-    //     listview.page.add_inner_button(__('Show Submitted'), function() {
-    //         listview.filter_area.add('Farben Job Tracker', 'docstatus', '=', 1);
-    //         listview.refresh();
-    //     });
-    // },
     refresh: function(listview) {
         // This targets the filter area specifically and hides the 'ID' (name) input
         listview.page.wrapper.find('.field-filter[data-fieldname="name"]').hide();
@@ -13,6 +6,7 @@ frappe.listview_settings['Farben Job Tracker'] = {
         // Also hide the "ID" from the primary search bar dropdown if it exists
         $('[data-fieldname="name"]').hide();
      
+ 
         listview.get_args = function () {  // Override only instance method
             let args = frappe.views.ListView.prototype.get_args.call(listview);  // Calling his super
 

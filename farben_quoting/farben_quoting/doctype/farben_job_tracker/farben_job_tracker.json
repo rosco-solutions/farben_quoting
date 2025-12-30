@@ -10,8 +10,10 @@
   "date_range",
   "entry_type",
   "project",
+  "project_name",
   "customer",
   "activity_type",
+  "activity_type_name",
   "date_worked",
   "start_time_section",
   "column_break_gvzc",
@@ -38,8 +40,7 @@
    "depends_on": "eval:doc.entry_type == \"Project\"",
    "description": "Select the Job you are working on.",
    "fieldname": "project",
-   "fieldtype": "Link",
-   "in_standard_filter": 1,
+   "fieldtype": "Autocomplete",
    "label": "Project",
    "mandatory_depends_on": "eval:doc.entry_type == \"Project\"",
    "options": "Project"
@@ -208,7 +209,8 @@
    "fieldname": "customer",
    "fieldtype": "Data",
    "label": "Customer",
-   "options": "Customer"
+   "options": "Customer",
+   "read_only": 1
   },
   {
    "fieldname": "date_range",
@@ -217,13 +219,29 @@
    "in_standard_filter": 1,
    "label": "Date Range",
    "options": "\nday: yesterday\nday: today\nday: tomorrow\nweek: last x2\nweek: last\nweek: this\nweek: next\nmonth: last\nmonth: this\nmonth: next\nyear: last calendar\nyear: last financial\nyear: this calendar\nyear: this financial\nqtr: last (FY)\nqtr: this (FY)\nqtr: first (FY)\nqtr: second (FY)\nqtr: third (FY)\nqtr: fourth (FY)\nall: last week back\nall: this week back\nall: from now on\nall: dates"
+  },
+  {
+   "depends_on": "eval:doc.entry_type == \"Project\"",
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project Name",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.entry_type == \"Other\"",
+   "fieldname": "activity_type_name",
+   "fieldtype": "Data",
+   "label": "Activity Type",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-30 20:07:24.209861",
+ "modified": "2025-12-30 22:44:39.763400",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Farben Job Tracker",

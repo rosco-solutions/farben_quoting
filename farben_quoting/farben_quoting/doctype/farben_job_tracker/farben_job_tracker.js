@@ -9,11 +9,37 @@ frappe.ui.form.on("Farben Job Tracker", {
                 frm.set_value('employee', r.name);
             }
         });
+
+       // Fetch project names and titles from the Project DocType
+        frappe.call({
+            method: 'frappe.client.get_list',
+            args: {
+                doctype: 'Project',
+                fields: ['name', 'project_name'], // 'name' for the value, 'project_name' for a descriptive label
+                limit_page_length: 100 // Adjust as needed
+            },
+            callback: function(r) {
+                if (r.message) {
+                    // Format data as a list of value/label objects
+                    const options = r.message.map(project => ({
+                        "value": project.name,
+                        "label": project.project_name || project.name
+                    }));
+
+                    // Load formatted data into the autocomplete field
+                    frm.fields_dict.project.set_data(options);
+                }
+            }
+        });
     },
     refresh: function(frm) {
-        // Hide the project link field's open button
-        frm.get_field('project').$input.next('.btn-open').hide();
-        
+        // Toggle visibility: Hide 'project' field if docstatus is 1 (Submitted)
+        // This will show the field if docstatus is 0 (Draft) and hide it if 1 (Submitted)
+        frm.toggle_display('project', frm.doc.docstatus === 0);
+        frm.toggle_display('employee', frm.doc.docstatus === 0);
+        frm.toggle_display('activity_type', frm.doc.docstatus === 0);
+        frm.toggle_display('activity_type_name', frm.doc.docstatus === 1);
+
         // set start and end times to be correct size and sit next to each other.
         $(`[data-fieldname="${'start_time_hr'}"]`).css({
             'max-width': '75px', // Set a specific width
@@ -79,6 +105,19 @@ frappe.ui.form.on("Farben Job Tracker", {
             }
         });
     },
+    activity_type: function(frm) {
+       // update activity type name field when activity type is changed
+       if (frm.doc.activity_type) {
+            frappe.db.get_value('Activity Type', frm.doc.activity_type, 'name')
+                .then(r => {
+                    if (r && r.message) {
+                        frm.set_value('activity_type_name', r.message.name);
+                    }
+                });
+        } else {
+            frm.set_value('activity_type_name', '');
+        }   
+    },
     date_worked: function(frm) {
         // Trigger the calculation when the date_worked field changes
         calculate_duration(frm);
@@ -111,6 +150,23 @@ frappe.ui.form.on("Farben Job Tracker", {
     lunch_included: function(frm) {
         calculate_duration(frm);
     },
+    project: function(frm) {
+        if (frm.doc.project) {
+            // Fetch multiple values (project_name and customer) at once
+            frappe.db.get_value('Project', frm.doc.project, ['project_name', 'customer'])
+                .then(r => {
+                    if (r && r.message) {
+                        // Update both fields in your custom doctype
+                        frm.set_value('project_name', r.message.project_name);
+                        frm.set_value('customer', r.message.customer);
+                    }
+                });
+        } else {
+            // Clear fields if project is deselected
+            frm.set_value('project_name', '');
+            frm.set_value('customer', '');
+        }
+    },    
     start_time_hr: function(frm) {
         // Also trigger the calculation when the start_time field changes
         if (frm.doc.start_time_hr == '12') {
