@@ -68,24 +68,21 @@ frappe.ui.form.on("Farben Job Tracker", {
             }
         });
     },
+    date_worked: function(frm) {
+        // Trigger the calculation when the date_worked field changes
+        calculate_duration(frm);
+    },
     end_time_hr: function(frm) {
         // Trigger the calculation when the end_time field changes
-        // if (frm.doc.start_time > frm.doc.end_time) {
-        //     frappe.msgprint(__('End Time cannot be earlier than Start Time'));
-        //     frm.doc.end_time = null;
-        //     frm.refresh_field('end_time');
-        //     return;
-        // }            
+        if (frm.doc.end_time_hr == '12') {
+            frm.set_value('end_ampm', 'PM');
+        } else if (frm.doc.end_time_hr == '0') {
+            frm.set_value('end_ampm', 'AM');
+        }
         calculate_duration(frm);
     },
     end_time_min: function(frm) {
         // Trigger the calculation when the end_time field changes
-        // if (frm.doc.start_time > frm.doc.end_time) {
-        //     frappe.msgprint(__('End Time cannot be earlier than Start Time'));
-        //     frm.doc.end_time = null;
-        //     frm.refresh_field('end_time');
-        //     return;
-        // }            
         calculate_duration(frm);
     },
     end_ampm: function(frm) {
@@ -105,18 +102,15 @@ frappe.ui.form.on("Farben Job Tracker", {
     },
     start_time_hr: function(frm) {
         // Also trigger the calculation when the start_time field changes
-        // if (frm.doc.end_time == null) {
-        //     frm.doc.end_time = frm.doc.start_time;
-        //     frm.refresh_field('end_time');
-        // }
+        if (frm.doc.start_time_hr == '12') {
+            frm.set_value('start_ampm', 'PM');
+        } else if (frm.doc.start_time_hr == '0') {
+            frm.set_value('start_ampm', 'AM');
+        }
         calculate_duration(frm);
     },
     start_time_min: function(frm) {
         // Also trigger the calculation when the start_time field changes
-        // if (frm.doc.end_time == null) {
-        //     frm.doc.end_time = frm.doc.start_time;
-        //     frm.refresh_field('end_time');
-        // }
         calculate_duration(frm);
     },
     start_ampm: function(frm) {
@@ -127,12 +121,12 @@ frappe.ui.form.on("Farben Job Tracker", {
 
 function calculate_duration(frm) {
     if (frm.doc.start_time_hr && frm.doc.start_time_min && frm.doc.start_ampm && frm.doc.end_time_hr && frm.doc.end_time_min && frm.doc.end_ampm) {
-        if (frm.doc.start_ampm == 'AM' && frm.doc.start_time_hr != '12') {
+        if (frm.doc.start_ampm == 'AM' || frm.doc.start_time_hr == '12') {
             var start_time = frm.doc.date_worked + ' ' + frm.doc.start_time_hr.padStart(2, '0') + ':' + frm.doc.start_time_min.padStart(2, '0') + ':00';
         } else {
-            var start_time = frm.doc.date_worked + ' ' + (parseInt(frm.start.end_time_hr, 10) + 12).toString().padStart(2, '0') + ':' + frm.doc.start_time_min.padStart(2, '0') + ':00';
+            var start_time = frm.doc.date_worked + ' ' + (parseInt(frm.doc.start_time_hr, 10) + 12).toString().padStart(2, '0') + ':' + frm.doc.start_time_min.padStart(2, '0') + ':00';
         }
-        if (frm.doc.end_ampm == 'AM' && frm.doc.end_time_hr != '12') {
+        if (frm.doc.end_ampm == 'AM' || frm.doc.end_time_hr == '12') {
             var end_time = frm.doc.date_worked + ' ' + frm.doc.end_time_hr.padStart(2, '0') + ':' + frm.doc.end_time_min.padStart(2, '0') + ':00';
         } else {
             var end_time = frm.doc.date_worked + ' ' + (parseInt(frm.doc.end_time_hr, 10) + 12).toString().padStart(2, '0') + ':' + frm.doc.end_time_min.padStart(2, '0') + ':00';

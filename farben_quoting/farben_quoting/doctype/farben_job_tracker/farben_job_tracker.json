@@ -90,6 +90,7 @@
    "search_index": 1
   },
   {
+   "default": "Today",
    "fieldname": "date_worked",
    "fieldtype": "Date",
    "label": "Date",
@@ -104,7 +105,7 @@
    "fieldname": "start_time_hr",
    "fieldtype": "Select",
    "label": "Start Time",
-   "options": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12",
+   "options": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12",
    "reqd": 1,
    "width": "10"
   },
@@ -212,7 +213,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-24 18:06:25.480454",
+ "modified": "2025-12-30 17:21:31.887707",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Farben Job Tracker",
