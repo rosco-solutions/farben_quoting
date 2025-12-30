@@ -2,7 +2,18 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Farben Job Tracker", {
+     onload: function(frm) {
+        // Fetch the Employee ID linked to the current user's email
+        frappe.db.get_value('Employee', { user_id: frappe.session.user }, 'name', (r) => {
+            if (r.name) {
+                frm.set_value('employee', r.name);
+            }
+        });
+    },
     refresh: function(frm) {
+        // Hide the project link field's open button
+        frm.get_field('project').$input.next('.btn-open').hide();
+        
         // set start and end times to be correct size and sit next to each other.
         $(`[data-fieldname="${'start_time_hr'}"]`).css({
             'max-width': '75px', // Set a specific width

@@ -65,8 +65,8 @@ class FarbenJobTracker(Document):
 		# 3. Save the Timesheet
 		if new_timesheet:
 			timesheet.insert(ignore_permissions=True)
-			frappe.msgprint(f"Timesheet <a href='/app/timesheet/{timesheet.name}'>{timesheet.name}</a> has been created.")
+			# frappe.msgprint(f"Timesheet <a href='/app/timesheet/{timesheet.name}'>{timesheet.name}</a> has been created.")
 		else:
 			timesheet.save(ignore_permissions=True)
-			frappe.msgprint(f"Timesheet <a href='/app/timesheet/{timesheet.name}'>{timesheet.name}</a> has been updated.")
+			# frappe.msgprint(f"Timesheet <a href='/app/timesheet/{timesheet.name}'>{timesheet.name}</a> has been updated.")
 

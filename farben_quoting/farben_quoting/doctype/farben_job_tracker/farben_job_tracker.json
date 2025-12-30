@@ -7,8 +7,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "employee",
-  "employee_name",
+  "date_range",
   "entry_type",
   "project",
   "customer",
@@ -30,6 +29,8 @@
   "travel",
   "meal",
   "naming_series",
+  "employee",
+  "employee_name",
   "amended_from"
  ],
  "fields": [
@@ -38,7 +39,6 @@
    "description": "Select the Job you are working on.",
    "fieldname": "project",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Project",
    "mandatory_depends_on": "eval:doc.entry_type == \"Project\"",
@@ -75,6 +75,7 @@
    "default": "9",
    "fieldname": "duration",
    "fieldtype": "Float",
+   "in_list_view": 1,
    "label": "Duration (hrs)",
    "precision": "2",
    "read_only": 1
@@ -93,6 +94,8 @@
    "default": "Today",
    "fieldname": "date_worked",
    "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Date",
    "reqd": 1
   },
@@ -176,6 +179,7 @@
    "depends_on": "eval:doc.entry_type == \"Other\"",
    "fieldname": "activity_type",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Activity Type",
    "link_filters": "[[\"Activity Type\", \"custom_farben_job_tracker\", \"=\", 1]]\n",
    "options": "Activity Type"
@@ -184,8 +188,6 @@
    "description": "Please select your name from the list",
    "fieldname": "employee",
    "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Employee",
    "options": "Employee",
    "reqd": 1
@@ -204,16 +206,24 @@
    "depends_on": "eval:doc.entry_type == \"Project\"",
    "fetch_from": "project.customer",
    "fieldname": "customer",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "Customer",
    "options": "Customer"
+  },
+  {
+   "fieldname": "date_range",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "in_standard_filter": 1,
+   "label": "Date Range",
+   "options": "\nday: yesterday\nday: today\nday: tomorrow\nweek: last x2\nweek: last\nweek: this\nweek: next\nmonth: last\nmonth: this\nmonth: next\nyear: last calendar\nyear: last financial\nyear: this calendar\nyear: this financial\nqtr: last (FY)\nqtr: this (FY)\nqtr: first (FY)\nqtr: second (FY)\nqtr: third (FY)\nqtr: fourth (FY)\nall: last week back\nall: this week back\nall: from now on\nall: dates"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-30 17:21:31.887707",
+ "modified": "2025-12-30 20:07:24.209861",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Farben Job Tracker",
@@ -234,8 +244,6 @@
    "write": 1
   },
   {
-   "amend": 1,
-   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -248,8 +256,6 @@
    "write": 1
   },
   {
-   "amend": 1,
-   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -265,7 +271,9 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "date_range, project, activity_type, date_worked",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "date_worked"
 }
