@@ -8,8 +8,9 @@ frappe.listview_settings['Farben Job Tracker'] = {
      
  
         listview.get_args = function () {  // Override only instance method
-            let args = frappe.views.ListView.prototype.get_args.call(listview);  // Calling his super
-
+            let args = frappe.views.ListView.prototype.get_args.call(listview); // Call the original method to get default args
+            
+            // Check if 'date_range' filter is applied
             args.filters.some((f, i) => {
                 if (f[1] === 'date_range') {  
                     // If date_range filter has been selected then determine the range selected and set ['Schedules', 'start', '<=', '<<datetime>>'] and ['Schedules', 'end', '>=', '<<datetime>>'] into the filter

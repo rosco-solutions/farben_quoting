@@ -40,7 +40,9 @@
    "depends_on": "eval:doc.entry_type == \"Project\"",
    "description": "Select the Job you are working on.",
    "fieldname": "project",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Project",
    "mandatory_depends_on": "eval:doc.entry_type == \"Project\"",
    "options": "Project"
@@ -224,9 +226,7 @@
    "depends_on": "eval:doc.entry_type == \"Project\"",
    "fieldname": "project_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Project Name",
+   "label": "Project",
    "read_only": 1
   },
   {
@@ -241,7 +241,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-30 22:44:39.763400",
+ "modified": "2025-12-31 09:03:51.059016",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Farben Job Tracker",

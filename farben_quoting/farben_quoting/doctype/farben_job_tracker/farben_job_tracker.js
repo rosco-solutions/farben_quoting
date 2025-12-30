@@ -9,33 +9,13 @@ frappe.ui.form.on("Farben Job Tracker", {
                 frm.set_value('employee', r.name);
             }
         });
-
-       // Fetch project names and titles from the Project DocType
-        frappe.call({
-            method: 'frappe.client.get_list',
-            args: {
-                doctype: 'Project',
-                fields: ['name', 'project_name'], // 'name' for the value, 'project_name' for a descriptive label
-                limit_page_length: 100 // Adjust as needed
-            },
-            callback: function(r) {
-                if (r.message) {
-                    // Format data as a list of value/label objects
-                    const options = r.message.map(project => ({
-                        "value": project.name,
-                        "label": project.project_name || project.name
-                    }));
-
-                    // Load formatted data into the autocomplete field
-                    frm.fields_dict.project.set_data(options);
-                }
-            }
-        });
     },
+
     refresh: function(frm) {
         // Toggle visibility: Hide 'project' field if docstatus is 1 (Submitted)
         // This will show the field if docstatus is 0 (Draft) and hide it if 1 (Submitted)
         frm.toggle_display('project', frm.doc.docstatus === 0);
+        frm.toggle_display('project_name', frm.doc.docstatus === 1);
         frm.toggle_display('employee', frm.doc.docstatus === 0);
         frm.toggle_display('activity_type', frm.doc.docstatus === 0);
         frm.toggle_display('activity_type_name', frm.doc.docstatus === 1);
@@ -119,11 +99,9 @@ frappe.ui.form.on("Farben Job Tracker", {
         }   
     },
     date_worked: function(frm) {
-        // Trigger the calculation when the date_worked field changes
         calculate_duration(frm);
     },
     end_time_hr: function(frm) {
-        // Trigger the calculation when the end_time field changes
         if (frm.doc.end_time_hr == '12') {
             frm.set_value('end_ampm', 'PM');
         } else if (frm.doc.end_time_hr == '0') {
@@ -132,7 +110,6 @@ frappe.ui.form.on("Farben Job Tracker", {
         calculate_duration(frm);
     },
     end_time_min: function(frm) {
-        // Trigger the calculation when the end_time field changes
         calculate_duration(frm);
     },
     end_ampm: function(frm) {
@@ -152,7 +129,7 @@ frappe.ui.form.on("Farben Job Tracker", {
     },
     project: function(frm) {
         if (frm.doc.project) {
-            // Fetch multiple values (project_name and customer) at once
+            // Fetch project_name and customer to load Data type fields
             frappe.db.get_value('Project', frm.doc.project, ['project_name', 'customer'])
                 .then(r => {
                     if (r && r.message) {
@@ -168,7 +145,6 @@ frappe.ui.form.on("Farben Job Tracker", {
         }
     },    
     start_time_hr: function(frm) {
-        // Also trigger the calculation when the start_time field changes
         if (frm.doc.start_time_hr == '12') {
             frm.set_value('start_ampm', 'PM');
         } else if (frm.doc.start_time_hr == '0') {
@@ -177,7 +153,6 @@ frappe.ui.form.on("Farben Job Tracker", {
         calculate_duration(frm);
     },
     start_time_min: function(frm) {
-        // Also trigger the calculation when the start_time field changes
         calculate_duration(frm);
     },
     start_ampm: function(frm) {
@@ -216,10 +191,6 @@ function calculate_duration(frm) {
         }
         if (duration_minutes < 0) {
             frappe.msgprint(__('End Time cannot be earlier than Start Time, please reselect your start or end time.'));
-            // frm.set_value('end_time_hr', null);
-            // frm.set_value('end_time_min', null);
-            // frm.set_value('end_ampm', null);
-            // frm.set_value('duration', null);
         }
     }
 }
