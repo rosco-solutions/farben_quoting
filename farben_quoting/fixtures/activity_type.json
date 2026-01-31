@@ -1,0 +1,189 @@
+[
+ {
+  "activity_type": "0001 - Office (for Office staff only)",
+  "billing_rate": 0.0,
+  "costing_rate": 30.0,
+  "custom_farben_job_tracker": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Activity Type",
+  "modified": "2025-12-23 17:08:26.928189",
+  "name": "0001 - Office (for Office staff only)"
+ },
+ {
+  "activity_type": "0003 - TAFE",
+  "billing_rate": 0.0,
+  "costing_rate": 30.0,
+  "custom_farben_job_tracker": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Activity Type",
+  "modified": "2025-12-23 17:09:17.790139",
+  "name": "0003 - TAFE"
+ },
+ {
+  "activity_type": "0004 - Training Course / Induction",
+  "billing_rate": 0.0,
+  "costing_rate": 30.0,
+  "custom_farben_job_tracker": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Activity Type",
+  "modified": "2025-12-23 17:09:39.613421",
+  "name": "0004 - Training Course / Induction"
+ },
+ {
+  "activity_type": "0005 - Farben Shed",
+  "billing_rate": 0.0,
+  "costing_rate": 30.0,
+  "custom_farben_job_tracker": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Activity Type",
+  "modified": "2025-12-23 17:09:59.998402",
+  "name": "0005 - Farben Shed"
+ },
+ {
+  "activity_type": "0006 - Annual Leave Holiday",
+  "billing_rate": 0.0,
+  "costing_rate": 30.0,
+  "custom_farben_job_tracker": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Activity Type",
+  "modified": "2025-12-23 17:10:23.452355",
+  "name": "0006 - Annual Leave Holiday"
+ },
+ {
+  "activity_type": "0006 - Long Service Leave",
+  "billing_rate": 0.0,
+  "costing_rate": 30.0,
+  "custom_farben_job_tracker": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Activity Type",
+  "modified": "2025-12-23 17:10:42.291684",
+  "name": "0006 - Long Service Leave"
+ },
+ {
+  "activity_type": "0007 - RDO",
+  "billing_rate": 0.0,
+  "costing_rate": 30.0,
+  "custom_farben_job_tracker": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Activity Type",
+  "modified": "2025-12-23 17:10:55.915840",
+  "name": "0007 - RDO"
+ },
+ {
+  "activity_type": "0008 - Sick Day",
+  "billing_rate": 0.0,
+  "costing_rate": 30.0,
+  "custom_farben_job_tracker": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Activity Type",
+  "modified": "2025-12-23 17:11:12.285963",
+  "name": "0008 - Sick Day"
+ },
+ {
+  "activity_type": "0009 - Public Holiday",
+  "billing_rate": 0.0,
+  "costing_rate": 30.0,
+  "custom_farben_job_tracker": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Activity Type",
+  "modified": "2025-12-23 17:11:28.291019",
+  "name": "0009 - Public Holiday"
+ },
+ {
+  "activity_type": "0010 - Leave without pay",
+  "billing_rate": 0.0,
+  "costing_rate": 0.0,
+  "custom_farben_job_tracker": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Activity Type",
+  "modified": "2025-12-23 17:11:55.536565",
+  "name": "0010 - Leave without pay"
+ },
+ {
+  "activity_type": "0011 - Carer's leave",
+  "billing_rate": 0.0,
+  "costing_rate": 30.0,
+  "custom_farben_job_tracker": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Activity Type",
+  "modified": "2025-12-23 17:12:22.702120",
+  "name": "0011 - Carer's leave"
+ },
+ {
+  "activity_type": "0012 - Time in Lieu Taken",
+  "billing_rate": 0.0,
+  "costing_rate": 30.0,
+  "custom_farben_job_tracker": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Activity Type",
+  "modified": "2025-12-23 17:12:44.718890",
+  "name": "0012 - Time in Lieu Taken"
+ },
+ {
+  "activity_type": "0015 - Meeting",
+  "billing_rate": 0.0,
+  "costing_rate": 30.0,
+  "custom_farben_job_tracker": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Activity Type",
+  "modified": "2025-12-23 17:12:59.536693",
+  "name": "0015 - Meeting"
+ },
+ {
+  "activity_type": "0016 - Workers Compensation",
+  "billing_rate": 0.0,
+  "costing_rate": 30.0,
+  "custom_farben_job_tracker": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Activity Type",
+  "modified": "2025-12-23 17:13:16.746568",
+  "name": "0016 - Workers Compensation"
+ },
+ {
+  "activity_type": "0012 - Time in Lieu Accrued",
+  "billing_rate": 0.0,
+  "costing_rate": 0.0,
+  "custom_farben_job_tracker": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Activity Type",
+  "modified": "2025-12-23 17:26:38.085299",
+  "name": "0012 - Time in Lieu Accrued"
+ },
+ {
+  "activity_type": "0002 - Toolbox Talk",
+  "billing_rate": 0.0,
+  "costing_rate": 0.0,
+  "custom_farben_job_tracker": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Activity Type",
+  "modified": "2025-12-23 17:08:42.850767",
+  "name": "0002 - Toolbox Talk"
+ },
+ {
+  "activity_type": "Painting",
+  "billing_rate": 80.0,
+  "costing_rate": 27.35,
+  "custom_farben_job_tracker": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Activity Type",
+  "modified": "2025-12-24 16:37:08.286139",
+  "name": "Painting"
+ }
+]

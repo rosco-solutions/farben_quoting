@@ -1,5 +1,12 @@
 from . import __version__ as app_version
 
+from erpnext.projects.doctype.timesheet.timesheet import Timesheet
+from farben_quoting.api import custom_calculate_hours,  custom_set_to_time
+
+# Monkey patch the method: Replace the original with your custom one
+Timesheet.calculate_hours = custom_calculate_hours
+Timesheet.set_to_time = custom_set_to_time
+
 app_name = "farben_quoting"
 app_title = "Farben Quoting"
 app_publisher = "Rosco Solutions"
@@ -13,7 +20,7 @@ app_license = "MIT"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/farben_quoting/css/farben_quoting.css"
+app_include_css = "/assets/farben_quoting/css/farben_quoting.css"
 # app_include_js = "/assets/farben_quoting/js/farben_quoting.js"
 
 # include js, css files in header of web template
@@ -31,7 +38,10 @@ app_license = "MIT"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-doctype_js = {"Quotation" : "public/js/quotation.js"}
+doctype_js = {
+    "Quotation" : "public/js/quotation.js",
+    "Timesheet": "public/js/timesheet.js"
+}
 # doctype_list_js = {"Quotes" : "public/js/quotes_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -90,11 +100,9 @@ doctype_js = {"Quotation" : "public/js/quotation.js"}
 # Hook on document methods and events
 
 # doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-#	}
+# 	"Timesheet": {
+#         "validate": "farben_quoting.api.calculate_lunch_deduction"
+#     }
 # }
 
 # Scheduled Tasks
@@ -174,6 +182,6 @@ user_data_fields = [
 # ]
 
 fixtures = ["Help", 
-            {"dt": "Custom Field", "filters": [["module", "like", "%Farben Quoting%"]]}
-            # {"dt": "Item", "filters": [["custom_use_as_default_in_quotation", "=", "1"]]}
+            {"dt": "Custom Field", "filters": [["module", "like", "%Farben Quoting%"]]},
+            {"dt": "Activity Type", "filters": [["custom_farben_job_tracker", "=", "1"]]}
 			]

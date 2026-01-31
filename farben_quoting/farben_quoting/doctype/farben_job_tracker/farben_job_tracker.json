@@ -1,0 +1,297 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:[ID]",
+ "creation": "2025-12-11 14:50:00.111350",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "date_range",
+  "entry_type",
+  "project",
+  "project_name",
+  "customer",
+  "activity_type",
+  "activity_type_name",
+  "date_worked",
+  "start_time_section",
+  "column_break_gvzc",
+  "start_time_hr",
+  "start_time_min",
+  "start_ampm",
+  "section_break_ipvy",
+  "end_time_hr",
+  "end_time_min",
+  "end_ampm",
+  "section_break_exwk",
+  "duration",
+  "lunch_included",
+  "payable_hours",
+  "travel",
+  "meal",
+  "naming_series",
+  "employee",
+  "employee_name",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "depends_on": "eval:doc.entry_type == \"Project\"",
+   "description": "Select the Job you are working on.",
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project",
+   "mandatory_depends_on": "eval:doc.entry_type == \"Project\"",
+   "options": "Project"
+  },
+  {
+   "default": "0",
+   "fieldname": "lunch_included",
+   "fieldtype": "Check",
+   "label": "Lunch Included"
+  },
+  {
+   "default": "0",
+   "description": "Tick if using own vehicle to & from work.",
+   "fieldname": "travel",
+   "fieldtype": "Check",
+   "label": "Travel"
+  },
+  {
+   "default": "0",
+   "description": "Tick if authorised meal allowance.",
+   "fieldname": "meal",
+   "fieldtype": "Check",
+   "label": "Meal"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "ID",
+   "options": "TS"
+  },
+  {
+   "default": "9",
+   "fieldname": "duration",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Duration (hrs)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Farben Job Tracker",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date_worked",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_time_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "7",
+   "fieldname": "start_time_hr",
+   "fieldtype": "Select",
+   "label": "Start Time",
+   "options": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12",
+   "reqd": 1,
+   "width": "10"
+  },
+  {
+   "fieldname": "start_time_min",
+   "fieldtype": "Select",
+   "options": "00\n15\n30\n45",
+   "reqd": 1,
+   "width": "10"
+  },
+  {
+   "default": "4",
+   "fieldname": "end_time_hr",
+   "fieldtype": "Select",
+   "label": "End Time",
+   "options": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_time_min",
+   "fieldtype": "Select",
+   "options": "00\n15\n30\n45",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_gvzc",
+   "fieldtype": "Column Break",
+   "width": "10"
+  },
+  {
+   "fieldname": "section_break_exwk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_ipvy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "AM",
+   "fieldname": "start_ampm",
+   "fieldtype": "Select",
+   "options": "AM\nPM",
+   "reqd": 1
+  },
+  {
+   "default": "PM",
+   "fieldname": "end_ampm",
+   "fieldtype": "Select",
+   "options": "AM\nPM",
+   "reqd": 1
+  },
+  {
+   "default": "9",
+   "fieldname": "payable_hours",
+   "fieldtype": "Float",
+   "label": "Payable Hours",
+   "read_only": 1
+  },
+  {
+   "default": "Project",
+   "fieldname": "entry_type",
+   "fieldtype": "Select",
+   "label": "Entry Type",
+   "options": "Project\nOther",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.entry_type == \"Other\"",
+   "fieldname": "activity_type",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Activity Type",
+   "link_filters": "[[\"Activity Type\", \"custom_farben_job_tracker\", \"=\", 1]]\n",
+   "options": "Activity Type"
+  },
+  {
+   "description": "Please select your name from the list",
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.entry_type == \"Project\"",
+   "fetch_from": "project.customer",
+   "fieldname": "customer",
+   "fieldtype": "Data",
+   "label": "Customer",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "date_range",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "in_standard_filter": 1,
+   "label": "Date Range",
+   "options": "\nday: yesterday\nday: today\nday: tomorrow\nweek: last x2\nweek: last\nweek: this\nweek: next\nmonth: last\nmonth: this\nmonth: next\nyear: last calendar\nyear: last financial\nyear: this calendar\nyear: this financial\nqtr: last (FY)\nqtr: this (FY)\nqtr: first (FY)\nqtr: second (FY)\nqtr: third (FY)\nqtr: fourth (FY)\nall: last week back\nall: this week back\nall: from now on\nall: dates"
+  },
+  {
+   "depends_on": "eval:doc.entry_type == \"Project\"",
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "label": "Project",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.entry_type == \"Other\"",
+   "fieldname": "activity_type_name",
+   "fieldtype": "Data",
+   "label": "Activity Type",
+   "read_only": 1
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-12-31 09:03:51.059016",
+ "modified_by": "Administrator",
+ "module": "Farben Quoting",
+ "name": "Farben Job Tracker",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "date_range, project, activity_type, date_worked",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "date_worked"
+}

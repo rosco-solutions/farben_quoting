@@ -1,0 +1,14 @@
+/* Hide the open record button only within the Farben Job Tracker form in Frappe v15+ */
+/* The route pattern is usually #Form/[DocType Name]/[Doc Name (wildcard)] */
+
+/* Target the entire app wrapper when this specific form route is active */
+[data-route*="Form/Farben Job Tracker"] .btn-open {
+    display: none !important;
+}
+
+/* Hide the ID (name) search input in the List View filters for Farben Job Tracker */
+[data-route*="List/Farben Job Tracker"] .filter-selector [data-fieldname="name"],
+[data-route*="List/Farben Job Tracker"] .list-filters [data-fieldname="name"] {
+    display: none !important;
+}
+
