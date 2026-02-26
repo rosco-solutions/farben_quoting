@@ -185,6 +185,6 @@ fixtures = ["Help",
             {"dt": "Custom Field", "filters": [["module", "like", "%Farben Quoting%"]]},
             {"dt": "Activity Type", "filters": [["custom_farben_job_tracker", "=", "1"]]},
             {"dt": "Module Def", "filters": [["name", "like", "%Farben%"]]},
-            {"dt": "Role Profile", "filters": [["name", "like", "%Farben%"]]},
-            {"dt": "Module Profile", "filters": [["name", "like", "%Farben%"]]},
+            {"dt": "Role Profile", "filters": [["custom_rosco", "=", "1"]]},
+            {"dt": "Module Profile", "filters": [["custom_rosco", "=", "1"]]},
 			]
