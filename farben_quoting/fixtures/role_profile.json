@@ -3,34 +3,6 @@
   "custom_rosco": 1,
   "docstatus": 0,
   "doctype": "Role Profile",
-  "modified": "2026-02-26 16:14:44.553798",
-  "name": "Painter",
-  "role_profile": "Painter",
-  "roles": [
-   {
-    "parent": "Painter",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Employee"
-   },
-   {
-    "parent": "Painter",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Projects User"
-   },
-   {
-    "parent": "Painter",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Accounts User"
-   }
-  ]
- },
- {
-  "custom_rosco": 1,
-  "docstatus": 0,
-  "doctype": "Role Profile",
   "modified": "2026-02-26 16:34:24.128370",
   "name": "Office",
   "role_profile": "Office",
@@ -328,6 +300,34 @@
     "parentfield": "roles",
     "parenttype": "Role Profile",
     "role": "Translator"
+   }
+  ]
+ },
+ {
+  "custom_rosco": 1,
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2026-02-26 16:14:44.553798",
+  "name": "Painter",
+  "role_profile": "Painter",
+  "roles": [
+   {
+    "parent": "Painter",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Employee"
+   },
+   {
+    "parent": "Painter",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Projects User"
+   },
+   {
+    "parent": "Painter",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Accounts User"
    }
   ]
  }

@@ -1,5 +1,14 @@
 [
  {
+  "block_modules": [],
+  "custom_rosco": 1,
+  "docstatus": 0,
+  "doctype": "Module Profile",
+  "modified": "2026-02-26 16:35:16.955976",
+  "module_profile_name": "Office",
+  "name": "Office"
+ },
+ {
   "block_modules": [
    {
     "module": "Accounts",
@@ -236,14 +245,5 @@
   "modified": "2026-02-26 16:17:38.575435",
   "module_profile_name": "Painter",
   "name": "Painter"
- },
- {
-  "block_modules": [],
-  "custom_rosco": 1,
-  "docstatus": 0,
-  "doctype": "Module Profile",
-  "modified": "2026-02-26 16:35:16.955976",
-  "module_profile_name": "Office",
-  "name": "Office"
  }
 ]
