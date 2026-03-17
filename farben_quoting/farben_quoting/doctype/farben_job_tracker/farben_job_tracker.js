@@ -9,6 +9,14 @@ frappe.ui.form.on("Farben Job Tracker", {
                 frm.set_value('employee', r.name);
             }
         });
+        // Apply filter to show only 'Open' projects
+        frm.set_query('project', function() {
+            return {
+                filters: {
+                    'status': 'Open'
+                }
+            };
+        });
     },
 
     refresh: function(frm) {

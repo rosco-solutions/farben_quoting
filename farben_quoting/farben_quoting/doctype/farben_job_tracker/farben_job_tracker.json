@@ -210,6 +210,7 @@
    "fetch_from": "project.customer",
    "fieldname": "customer",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Customer",
    "options": "Customer",
    "read_only": 1
@@ -241,7 +242,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-31 09:03:51.059016",
+ "modified": "2026-03-17 11:44:32.906628",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Farben Job Tracker",

@@ -174,16 +174,5 @@
   "doctype": "Activity Type",
   "modified": "2025-12-23 17:08:42.850767",
   "name": "0002 - Toolbox Talk"
- },
- {
-  "activity_type": "Painting",
-  "billing_rate": 80.0,
-  "costing_rate": 27.35,
-  "custom_farben_job_tracker": 1,
-  "disabled": 0,
-  "docstatus": 0,
-  "doctype": "Activity Type",
-  "modified": "2025-12-24 16:37:08.286139",
-  "name": "Painting"
  }
 ]

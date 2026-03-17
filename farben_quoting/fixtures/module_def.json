@@ -1,0 +1,32 @@
+[
+ {
+  "_assign": null,
+  "_comments": null,
+  "_liked_by": null,
+  "_user_tags": null,
+  "app_name": "farben_quoting",
+  "custom": 0,
+  "docstatus": 0,
+  "doctype": "Module Def",
+  "modified": "2025-12-18 19:04:03.952823",
+  "module_name": "Farben Quoting",
+  "name": "Farben Quoting",
+  "package": null,
+  "restrict_to_domain": null
+ },
+ {
+  "_assign": null,
+  "_comments": null,
+  "_liked_by": null,
+  "_user_tags": null,
+  "app_name": "farben_quoting",
+  "custom": 0,
+  "docstatus": 0,
+  "doctype": "Module Def",
+  "modified": "2025-12-30 18:37:07.587952",
+  "module_name": "Farben Employee",
+  "name": "Farben Employee",
+  "package": null,
+  "restrict_to_domain": null
+ }
+]
