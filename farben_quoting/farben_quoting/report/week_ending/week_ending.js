@@ -22,5 +22,19 @@ frappe.query_reports["Week Ending"] = {
             "fieldtype": "Link",
             "options": "Employee"
         }
-    ]
+    ],
+
+    // Explicit V15 row formatting function
+    "formatter": function (value, row, column, data, default_formatter) {
+        // First, apply standard formatting rules
+        value = default_formatter(value, row, column, data);
+
+        // Check if the current row's activity type is a summary row
+        if (data && data.activity_type === "**WEEK TOTAL**") {
+            // Intercept the final HTML output and apply direct bold typography styling
+            return `<span style="font-weight: bold; color: var(--text-color);">${value}</span>`;
+        }
+
+        return value;
+    }	
 };
