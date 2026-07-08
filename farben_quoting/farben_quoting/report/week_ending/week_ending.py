@@ -18,7 +18,7 @@ def get_columns():
     return [
         {"label": _("Employee Name"), "fieldname": "employee_name", "fieldtype": "Data", "width": 160},
         {"label": _("Project Name"), "fieldname": "project_name", "fieldtype": "Data", "width": 180},
-        {"label": _("Employee / Date"), "fieldname": "employee_date", "fieldtype": "Data", "width": 140},
+        {"label": _("Date"), "fieldname": "work_date", "fieldtype": "Data", "width": 140},
         {"label": _("Start"), "fieldname": "start_time", "fieldtype": "Time", "width": 80},
         {"label": _("Finish"), "fieldname": "finish_time", "fieldtype": "Time", "width": 80},
         {"label": _("Lunch"), "fieldname": "lunch", "fieldtype": "Check", "width": 70},
@@ -111,7 +111,7 @@ def get_data(filters):
             finish_time_str = end_dt.strftime('%H:%M:%S') if isinstance(end_dt, datetime) else str(end_dt)[11:19]
 
             detail_rows.append({
-                "employee_date": start_dt.strftime('%Y-%m-%d') if isinstance(start_dt, datetime) else str(start_dt)[:10],
+                "work_date": start_dt.strftime('%Y-%m-%d') if isinstance(start_dt, datetime) else str(start_dt)[:10],
                 "employee_name": emp_name,
                 "timesheet": rec['timesheet'],
                 "project_name": rec['project_name'],
@@ -130,7 +130,7 @@ def get_data(filters):
 
         # Inject Week Summary block header
         report_data.append({
-            "employee_date": f"**{week}**",
+            "work_date": f"**{week}**",
             "employee_name": f"**{emp_name}**",
             "timesheet": "",
             "project_name": "",
