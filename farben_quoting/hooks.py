@@ -84,7 +84,7 @@ doctype_js = {
 # }
 #
 # has_permission = {
-# 	"Event": "frappe.desk.doctype.event.event.has_permission",
+# 	 "Event": "frappe.desk.doctype.event.event.has_permission",
 # }
 
 # DocType Class
