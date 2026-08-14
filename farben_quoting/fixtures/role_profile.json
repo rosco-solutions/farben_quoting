@@ -307,7 +307,7 @@
   "custom_rosco": 1,
   "docstatus": 0,
   "doctype": "Role Profile",
-  "modified": "2026-02-26 16:14:44.553798",
+  "modified": "2026-08-14 17:26:27.306208",
   "name": "Painter",
   "role_profile": "Painter",
   "roles": [
@@ -316,12 +316,6 @@
     "parentfield": "roles",
     "parenttype": "Role Profile",
     "role": "Employee"
-   },
-   {
-    "parent": "Painter",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Projects User"
    },
    {
     "parent": "Painter",
