@@ -4,8 +4,8 @@ import frappe
 def get_communication_permissions(user=None):
     """
     1. Administrator sees everything.
-    2. Standard users see emails they own/created.
-    3. Standard users can see emails linked to any DocType they have Read access to.
+    2. Standard users see emails where their email address matches the sender or recipient fields.
+    3. Standard users see emails linked to any DocType they have Read access to.
     """
     if not user:
         user = frappe.session.user
@@ -14,28 +14,34 @@ def get_communication_permissions(user=None):
     if user == "Administrator":
         return ""
 
-    # 1. Base condition: User can always see their own communications
-    conditions = [f"`tabCommunication`.owner = '{user}'"]
+    conditions = []
 
-    # 2. Add bypass for standard system Comments so timelines don't break
+    # Get the logged-in user's actual email address string
+    user_email = frappe.db.get_value("User", user, "email")
+    
+    if user_email:
+        # Securely escape the user's email for the raw SQL string
+        escaped_email = frappe.db.escape(user_email)
+        
+        # Check if the user sent it, or if their email is in the recipient/cc lists
+        conditions.append(f"`tabCommunication`.sender = {escaped_email}")
+        conditions.append(f"`tabCommunication`.recipients LIKE concat('%', {escaped_email}, '%')")
+        conditions.append(f"`tabCommunication`.cc LIKE concat('%', {escaped_email}, '%')")
+
+    # Always allow users to see standard timeline Comments
     conditions.append("`tabCommunication`.communication_type = 'Comment'")
 
-    # 3. Dynamic check: Find DocTypes the user has explicit permission to read
+    # Dynamic check: Find DocTypes the user has explicit permission to read (Projects, Customers, etc.)
     readable_doctypes = []
-    
-    # Get all DocTypes in the system to check permissions against
     all_doctypes = frappe.get_all("DocType", filters={"istable": 0}, pluck="name")
     
     for dt in all_doctypes:
-        # Check if the current user has "Read" rights to this document type
         if frappe.has_permission(dt, "read", user=user):
-            # Escape strings safely for SQL insertion
             readable_doctypes.append(frappe.db.escape(dt))
 
-    # If the user can read any DocTypes, allow them to see communications linked to them
     if readable_doctypes:
         doctype_list = ", ".join(readable_doctypes)
         conditions.append(f"`tabCommunication`.reference_doctype IN ({doctype_list})")
 
-    # Join all conditions with an OR statement so fulfilling ANY condition grants visibility
+    # Combine all rules with OR
     return f"({' OR '.join(conditions)})"
