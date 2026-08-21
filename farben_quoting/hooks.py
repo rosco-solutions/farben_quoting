@@ -79,9 +79,10 @@ doctype_js = {
 # -----------
 # Permissions evaluated in scripted ways
 
-# permission_query_conditions = {
-# 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
-# }
+permission_query_conditions = {
+    "Communication": "farben_quoting.permissions.get_communication_permissions"
+	# "Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
+}
 #
 # has_permission = {
 # 	 "Event": "frappe.desk.doctype.event.event.has_permission",
