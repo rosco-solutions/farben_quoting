@@ -3,303 +3,18 @@
   "custom_rosco": 1,
   "docstatus": 0,
   "doctype": "Role Profile",
-  "modified": "2026-02-26 16:34:24.128370",
-  "name": "Office",
-  "role_profile": "Office",
+  "modified": "2024-12-03 13:16:40.741266",
+  "name": "Inventory",
+  "role_profile": "Inventory",
   "roles": [
    {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Academics User"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Accounts Manager"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Accounts User"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Agriculture Manager"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Agriculture User"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Analytics"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Auditor"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Blogger"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Customer"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Dashboard Manager"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Delivery Manager"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Delivery User"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Employee"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Expense Approver"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Farben"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Fleet Manager"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Fulfillment User"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "HR Manager"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "HR User"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Inbox User"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Interviewer"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Item Manager"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Knowledge Base Contributor"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Knowledge Base Editor"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Leave Approver"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Maintenance Manager"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Maintenance User"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Manufacturing Manager"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Manufacturing User"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Newsletter Manager"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Prepared Report User"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Projects Manager"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Projects User"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Purchase Manager"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Purchase Master Manager"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Purchase User"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Quality Manager"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Report Manager"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Rosco Administrator"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Sales Manager"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Sales Master Manager"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Sales User"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Script Manager"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Stock Manager"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Stock User"
    },
    {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Supplier"
+    "role": "Stock Manager"
    },
    {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Support Team"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "System Manager"
-   },
-   {
-    "parent": "Office",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Translator"
+    "role": "Item Manager"
    }
   ]
  },
@@ -307,21 +22,448 @@
   "custom_rosco": 1,
   "docstatus": 0,
   "doctype": "Role Profile",
-  "modified": "2026-08-14 17:26:27.306208",
+  "modified": "2024-12-03 13:16:40.747409",
+  "name": "Manufacturing",
+  "role_profile": "Manufacturing",
+  "roles": [
+   {
+    "role": "Stock User"
+   },
+   {
+    "role": "Manufacturing User"
+   },
+   {
+    "role": "Manufacturing Manager"
+   }
+  ]
+ },
+ {
+  "custom_rosco": 1,
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2024-12-03 13:16:40.756286",
+  "name": "Sales",
+  "role_profile": "Sales",
+  "roles": [
+   {
+    "role": "Sales User"
+   },
+   {
+    "role": "Stock User"
+   },
+   {
+    "role": "Sales Manager"
+   }
+  ]
+ },
+ {
+  "custom_rosco": 1,
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2024-12-03 13:16:40.760480",
+  "name": "Purchase",
+  "role_profile": "Purchase",
+  "roles": [
+   {
+    "role": "Item Manager"
+   },
+   {
+    "role": "Stock User"
+   },
+   {
+    "role": "Purchase User"
+   },
+   {
+    "role": "Purchase Manager"
+   }
+  ]
+ },
+ {
+  "custom_rosco": 1,
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2024-12-03 13:17:17.168486",
+  "name": "HR",
+  "role_profile": "HR",
+  "roles": [
+   {
+    "role": "HR User"
+   },
+   {
+    "role": "HR Manager"
+   },
+   {
+    "role": "Leave Approver"
+   },
+   {
+    "role": "Expense Approver"
+   }
+  ]
+ },
+ {
+  "custom_rosco": 1,
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2026-09-04 13:51:48.574559",
+  "name": "Office",
+  "role_profile": "Office",
+  "roles": [
+   {
+    "role": "Academics User"
+   },
+   {
+    "role": "Accounts Manager"
+   },
+   {
+    "role": "Accounts User"
+   },
+   {
+    "role": "Analytics"
+   },
+   {
+    "role": "Auditor"
+   },
+   {
+    "role": "Blogger"
+   },
+   {
+    "role": "Customer"
+   },
+   {
+    "role": "Dashboard Manager"
+   },
+   {
+    "role": "Delivery Manager"
+   },
+   {
+    "role": "Delivery User"
+   },
+   {
+    "role": "Employee"
+   },
+   {
+    "role": "Expense Approver"
+   },
+   {
+    "role": "Fleet Manager"
+   },
+   {
+    "role": "Fulfillment User"
+   },
+   {
+    "role": "HR Manager"
+   },
+   {
+    "role": "HR User"
+   },
+   {
+    "role": "Inbox User"
+   },
+   {
+    "role": "Interviewer"
+   },
+   {
+    "role": "Item Manager"
+   },
+   {
+    "role": "Kassidee Administrator"
+   },
+   {
+    "role": "Knowledge Base Contributor"
+   },
+   {
+    "role": "Knowledge Base Editor"
+   },
+   {
+    "role": "Leave Approver"
+   },
+   {
+    "role": "Maintenance Manager"
+   },
+   {
+    "role": "Maintenance User"
+   },
+   {
+    "role": "Manufacturing Manager"
+   },
+   {
+    "role": "Manufacturing User"
+   },
+   {
+    "role": "Marketing Manager"
+   },
+   {
+    "role": "Newsletter Manager"
+   },
+   {
+    "role": "Prepared Report User"
+   },
+   {
+    "role": "Projects Manager"
+   },
+   {
+    "role": "Projects User"
+   },
+   {
+    "role": "Purchase Manager"
+   },
+   {
+    "role": "Purchase Master Manager"
+   },
+   {
+    "role": "Purchase User"
+   },
+   {
+    "role": "Quality Manager"
+   },
+   {
+    "role": "Report Manager"
+   },
+   {
+    "role": "Rosco Administrator"
+   },
+   {
+    "role": "Sales Manager"
+   },
+   {
+    "role": "Sales Master Manager"
+   },
+   {
+    "role": "Sales User"
+   },
+   {
+    "role": "Script Manager"
+   },
+   {
+    "role": "Shop Floor Manager"
+   },
+   {
+    "role": "Shop Floor User"
+   },
+   {
+    "role": "Stock Manager"
+   },
+   {
+    "role": "Stock User"
+   },
+   {
+    "role": "Supplier"
+   },
+   {
+    "role": "Support Team"
+   },
+   {
+    "role": "Translator"
+   },
+   {
+    "role": "Employee Self Service"
+   },
+   {
+    "role": "Farben Office"
+   },
+   {
+    "role": "Rosco User"
+   }
+  ]
+ },
+ {
+  "custom_rosco": 1,
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2026-09-04 13:09:33.380072",
   "name": "Painter",
   "role_profile": "Painter",
   "roles": [
    {
-    "parent": "Painter",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Employee"
    },
    {
-    "parent": "Painter",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
+    "role": "Farben Painter"
+   }
+  ]
+ },
+ {
+  "custom_rosco": 1,
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2026-09-04 13:51:40.315191",
+  "name": "Office Admin",
+  "role_profile": "Office Admin",
+  "roles": [
+   {
+    "role": "Academics User"
+   },
+   {
+    "role": "Accounts Manager"
+   },
+   {
     "role": "Accounts User"
+   },
+   {
+    "role": "Analytics"
+   },
+   {
+    "role": "Auditor"
+   },
+   {
+    "role": "Blogger"
+   },
+   {
+    "role": "Customer"
+   },
+   {
+    "role": "Dashboard Manager"
+   },
+   {
+    "role": "Delivery Manager"
+   },
+   {
+    "role": "Delivery User"
+   },
+   {
+    "role": "Employee"
+   },
+   {
+    "role": "Employee Self Service"
+   },
+   {
+    "role": "Expense Approver"
+   },
+   {
+    "role": "Fleet Manager"
+   },
+   {
+    "role": "Fulfillment User"
+   },
+   {
+    "role": "HR Manager"
+   },
+   {
+    "role": "HR User"
+   },
+   {
+    "role": "Inbox User"
+   },
+   {
+    "role": "Interviewer"
+   },
+   {
+    "role": "Item Manager"
+   },
+   {
+    "role": "Kassidee Administrator"
+   },
+   {
+    "role": "Knowledge Base Contributor"
+   },
+   {
+    "role": "Knowledge Base Editor"
+   },
+   {
+    "role": "Leave Approver"
+   },
+   {
+    "role": "Maintenance Manager"
+   },
+   {
+    "role": "Maintenance User"
+   },
+   {
+    "role": "Manufacturing Manager"
+   },
+   {
+    "role": "Manufacturing User"
+   },
+   {
+    "role": "Marketing Manager"
+   },
+   {
+    "role": "Newsletter Manager"
+   },
+   {
+    "role": "Prepared Report User"
+   },
+   {
+    "role": "Projects Manager"
+   },
+   {
+    "role": "Projects User"
+   },
+   {
+    "role": "Purchase Manager"
+   },
+   {
+    "role": "Purchase Master Manager"
+   },
+   {
+    "role": "Purchase User"
+   },
+   {
+    "role": "Quality Manager"
+   },
+   {
+    "role": "Report Manager"
+   },
+   {
+    "role": "Rosco Administrator"
+   },
+   {
+    "role": "Sales Manager"
+   },
+   {
+    "role": "Sales Master Manager"
+   },
+   {
+    "role": "Sales User"
+   },
+   {
+    "role": "Script Manager"
+   },
+   {
+    "role": "Shop Floor Manager"
+   },
+   {
+    "role": "Shop Floor User"
+   },
+   {
+    "role": "Stock Manager"
+   },
+   {
+    "role": "Stock User"
+   },
+   {
+    "role": "Supplier"
+   },
+   {
+    "role": "Support Team"
+   },
+   {
+    "role": "System Manager"
+   },
+   {
+    "role": "Translator"
+   },
+   {
+    "role": "Farben Admin"
+   },
+   {
+    "role": "Rosco User"
+   }
+  ]
+ },
+ {
+  "custom_rosco": 1,
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2024-12-03 13:16:40.752347",
+  "name": "Accounts",
+  "role_profile": "Accounts",
+  "roles": [
+   {
+    "role": "Accounts User"
+   },
+   {
+    "role": "Accounts Manager"
    }
   ]
  }

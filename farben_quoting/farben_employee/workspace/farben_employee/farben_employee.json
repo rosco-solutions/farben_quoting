@@ -1,6 +1,7 @@
 {
+ "app": "farben_quoting",
  "charts": [],
- "content": "[{\"id\":\"p0dBtlRgaT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Farben Employee</span>\",\"col\":12}},{\"id\":\"0vz1TJZZMq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Farben Job Tracker\",\"col\":3}}]",
+ "content": "[{\"id\":\"p0dBtlRgaT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Painter</span>\",\"col\":12}},{\"id\":\"0vz1TJZZMq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Farben Job Tracker\",\"col\":3}}]",
  "creation": "2025-12-30 18:40:09.894729",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +14,7 @@
  "is_hidden": 0,
  "label": "Farben Employee",
  "links": [],
- "modified": "2026-08-12 19:50:52.745672",
+ "modified": "2026-09-01 16:24:19.145668",
  "modified_by": "Administrator",
  "module": "Farben Employee",
  "name": "Farben Employee",
@@ -22,7 +23,11 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [],
+ "roles": [
+  {
+   "role": "Farben Painter"
+  }
+ ],
  "sequence_id": 2.0,
  "shortcuts": [
   {
@@ -34,5 +39,6 @@
    "type": "DocType"
   }
  ],
- "title": "Farben Employee"
+ "title": "Farben Employee",
+ "type": "Workspace"
 }

@@ -1,6 +1,5 @@
 # Copyright (c) 2026, Rosco Solutions
 
-
 import frappe
 from frappe import _
 from collections import defaultdict
@@ -58,7 +57,7 @@ def get_data(filters):
         from `tabTimesheet Detail` td
         join `tabTimesheet` t on td.parent = t.name
         {conditions}
-        order by t.employee, td.from_time
+        order by t.employee_name ASC, td.from_time ASC
     """, filters, as_dict=1)
 
     grouped_data = defaultdict(list)
@@ -69,13 +68,19 @@ def get_data(filters):
         date_obj = row['from_time'] if isinstance(row['from_time'], datetime) else datetime.strptime(str(row['from_time']), '%Y-%m-%d %H:%M:%S')
         year_week = date_obj.strftime('%Y-W%W') 
         
-        group_key = (row['employee'], row['employee_name'], year_week)
+        # Swapped key ordering to make sorting by Employee Name easy
+        group_key = (row['employee_name'], row['employee'], year_week)
         grouped_data[group_key].append(row)
 
-    report_data = []
+    # Sort the dictionary keys alphabetically by employee_name
+    sorted_group_keys = sorted(grouped_data.keys(), key=lambda x: x[0])
 
-    for group_key, records in grouped_data.items():
-        emp_id, emp_name, week = group_key
+    report_data = []
+    last_processed_employee = None
+
+    for group_key in sorted_group_keys:
+        records = grouped_data[group_key]
+        emp_name, emp_id, week = group_key
         
         week_std = 0.0
         week_p15 = 0.0
@@ -103,7 +108,6 @@ def get_data(filters):
                 
             week_total += hours
 
-            # Formatting raw date/time fields cleanly
             start_dt = rec['from_time']
             end_dt = rec['to_time']
             
@@ -128,8 +132,14 @@ def get_data(filters):
                 "indent": 1
             })
 
-        # Inject Week Summary block header
-        report_data.append({
+        # Evaluate if this is a brand new individual worker block
+        is_new_employee = False
+        if last_processed_employee and last_processed_employee != emp_id:
+            is_new_employee = True
+        last_processed_employee = emp_id
+
+        # Week Summary block header
+        header_row = {
             "work_date": f"**{week}**",
             "employee_name": f"**{emp_name}**",
             "timesheet": "",
@@ -145,9 +155,14 @@ def get_data(filters):
             "painting_20_hours": week_p20,
             "total_hours": week_total,
             "indent": 0
-        })
+        }
         
+        # Inject custom programmatic styling indicator for CSS PDF engine
+        if is_new_employee:
+            header_row["page_break"] = 1
+
+        report_data.append(header_row)
         report_data.extend(detail_rows)
-        report_data.append({}) # Break spacer line
+        report_data.append({}) 
 
     return report_data

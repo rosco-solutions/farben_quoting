@@ -1,0 +1,74 @@
+<style>
+    .print-page-break {
+        break-before: page !important;
+        page-break-before: always !important;
+        display: block !important;
+        height: 1px;
+        content: "";
+    }
+
+    .report-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        page-break-inside: auto;
+    }
+    
+    .report-table tr {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    .report-table th, .report-table td {
+        border: 1px solid #d1d8dd;
+        padding: 8px;
+        text-align: left;
+        font-size: 12px;
+    }
+    .report-table th {
+        background-color: #f8f9fa;
+        font-weight: bold;
+    }
+</style>
+
+<h2>{%= __("Week Ending Report") %}</h2>
+<hr>
+
+<table class="report-table">
+    <thead>
+        <tr>
+            {% for (var col_idx=0, col_len=columns.length; col_idx<col_len; col_idx++) { %}
+                <th>{%= columns[col_idx].label || columns[col_idx].fieldname %}</th>
+            {% } %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for (var row_idx=0, data_len=data.length; row_idx<data_len; row_idx++) { %}
+            {% var row = data[row_idx]; %}
+
+            {% if (row && (row.page_break == 1 || row.page_break == '1')) { %}
+                </tbody>
+                </table>
+
+                <div class="print-page-break"></div>
+
+                <table class="report-table" style="margin-top: 20px;">
+                <thead>
+                    <tr>
+                        {% for (var col_idx=0, col_len=columns.length; col_idx<col_len; col_idx++) { %}
+                            <th>{%= columns[col_idx].label || columns[col_idx].fieldname %}</th>
+                        {% } %}
+                    </tr>
+                </thead>
+                <tbody>
+            {% } %}
+
+            <tr>
+                {% for (var cell_idx=0, cell_len=columns.length; cell_idx<cell_len; cell_idx++) { %}
+                    {% var fieldname = columns[cell_idx].fieldname; %}
+                    <td>{%= (row && row[fieldname] !== undefined && row[fieldname] !== null) ? row[fieldname] : "" %}</td>
+                {% } %}
+            </tr>
+        {% } %}
+    </tbody>
+</table>

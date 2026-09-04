@@ -9,27 +9,51 @@ frappe.ui.form.on("Quotation", {
 				order_by: 'custom_item_sequence asc'
 			}).then(records => {
 				if (records.length > 0) {
+					var item_codes = records.map(r => r.item_code);
+					frappe.db.get_list('UOM Conversion Detail', {
+						fields: ['parent', 'uom', 'conversion_factor'],
+						filters: {'parent': ['in', item_codes]},
+						limit_page_length: 0
+					}).then(uom_records => {
+						// Build lookup map: item_code -> { uom: conversion_factor }
+						var conversion_factors = {};
+						uom_records.forEach(ur => {
+							if (!conversion_factors[ur.parent]) {
+								conversion_factors[ur.parent] = {};
+							}
+							conversion_factors[ur.parent][ur.uom] = ur.conversion_factor;
+						});
 
-					for (var i = 0; i < records.length; i++) {
-						if (frm.doc.items[i] && !frm.doc.items[i].item_code){
-							frm.doc.items[i].item_code = records[i].item_code;
-							frm.doc.items[i].item_name = records[i].item_name;
-							frm.doc.items[i].uom = records[i].stock_uom;
-							frm.doc.items[i].description = records[i].description;
-							frm.doc.items[i].qty = 1;
-							frm.doc.items[i].rate = 0; // Reset rate to 0
-						} else {
-							frm.add_child('items', {
-								item_code: records[i].item_code,
-								item_name: records[i].item_name,
-								uom: records[i].stock_uom,
-								description: records[i].description,
-								qty: 1,
-								rate: 0 // Reset rate to 0
-							});
-						}	
-					}
-					frm.refresh_field('items');
+						for (var i = 0; i < records.length; i++) {
+							var conversion_factor = 1;
+							if (conversion_factors[records[i].item_code]) {
+								var cf = conversion_factors[records[i].item_code][records[i].stock_uom];
+								if (cf !== undefined && cf !== null) {
+									conversion_factor = cf;
+								}
+							}
+							if (frm.doc.items[i] && !frm.doc.items[i].item_code){
+								frm.doc.items[i].item_code = records[i].item_code;
+								frm.doc.items[i].item_name = records[i].item_name;
+								frm.doc.items[i].uom = records[i].stock_uom;
+								frm.doc.items[i].description = records[i].description;
+								frm.doc.items[i].qty = 1;
+								frm.doc.items[i].rate = 0; // Reset rate to 0
+								frm.doc.items[i].conversion_factor = conversion_factor;
+							} else {
+								frm.add_child('items', {
+									item_code: records[i].item_code,
+									item_name: records[i].item_name,
+									uom: records[i].stock_uom,
+									description: records[i].description,
+									qty: 1,
+									rate: 0, // Reset rate to 0
+									conversion_factor: conversion_factor
+								});
+							}	
+						}
+						frm.refresh_field('items');
+					});
 				}
 			})
 		}
