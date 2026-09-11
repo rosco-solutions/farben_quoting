@@ -1,4 +1,17 @@
 <style>
+    /* Print Setup Optimization */
+    @media print {
+        @page {
+            size: auto;
+            margin: 10mm 15mm;
+        }
+        body {
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+    }
+
     .print-page-break {
         break-before: page !important;
         page-break-before: always !important;
@@ -9,6 +22,8 @@
 
     .report-table {
         width: 100%;
+        max-width: 100%;
+        table-layout: fixed;
         border-collapse: collapse;
         margin-top: 15px;
         page-break-inside: auto;
@@ -21,14 +36,29 @@
 
     .report-table th, .report-table td {
         border: 1px solid #d1d8dd;
-        padding: 8px;
+        padding: 6px 4px;
         text-align: left;
-        font-size: 12px;
+        font-size: 11px;
+        word-wrap: break-word;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        white-space: normal; 
     }
+    
     .report-table th {
         background-color: #f8f9fa;
         font-weight: bold;
     }
+
+    /* CSS Column Width Rules */
+    .col-employee_name, .col-project_name { width: 160px; }
+    .col-date { width: 95px; }
+    .col-lunch, .col-travel, .col-meal { width: 40px; }
+    .col-standard_hours { width: 57px; } /* Increased by 10% */
+    .col-painting_1_5_hours, .col-painting_2_0_hours { width: 52px; }
+    .col-total_hours, .col-total_meals { width: 60px; }
+    .col-start, .col-finish { width: 55px; }
+    .col-activity_type { width: 140px; }
 </style>
 
 <h2>{%= __("Week Ending Report") %}</h2>
@@ -38,7 +68,22 @@
     <thead>
         <tr>
             {% for (var col_idx=0, col_len=columns.length; col_idx<col_len; col_idx++) { %}
-                <th>{%= columns[col_idx].label || columns[col_idx].fieldname %}</th>
+                {% var col = columns[col_idx]; %}
+                {% if (col.label !== 'Timesheet' && col.fieldname !== 'timesheet') { %}
+                    <th class="col-{%= col.fieldname %}">
+                        {%= 
+                            (col.label === "Employee Name" || col.fieldname === "Employee Name") ? "Name" :
+                            (col.label === "Project Name" || col.fieldname === "Project Name") ? "Project" :
+                            (col.label === "Standard Hours" || col.fieldname === "Standard Hours") ? "1.0 Hours" :
+                            (col.label === "Painting 1.5 Hours" || col.fieldname === "Painting 1.5 Hours") ? "1.5 Hours" :
+                            (col.label === "Painting 2.0 Hours" || col.fieldname === "Painting 2.0 Hours") ? "2.0 Hours" :
+                            (col.label === "Lunch" || col.fieldname === "Lunch") ? "Lun" :
+                            (col.label === "Travel" || col.fieldname === "Travel") ? "Trav" :
+                            (col.label === "Finish" || col.fieldname === "Finish") ? "Fin" :
+                            (col.label || col.fieldname)
+                        %}
+                    </th>
+                {% } %}
             {% } %}
         </tr>
     </thead>
@@ -56,7 +101,22 @@
                 <thead>
                     <tr>
                         {% for (var col_idx=0, col_len=columns.length; col_idx<col_len; col_idx++) { %}
-                            <th>{%= columns[col_idx].label || columns[col_idx].fieldname %}</th>
+                            {% var col = columns[col_idx]; %}
+                            {% if (col.label !== 'Timesheet' && col.fieldname !== 'timesheet') { %}
+                                <th class="col-{%= col.fieldname %}">
+                                    {%= 
+                                        (col.label === "Employee Name" || col.fieldname === "Employee Name") ? "Name" :
+                                        (col.label === "Project Name" || col.fieldname === "Project Name") ? "Project" :
+                                        (col.label === "Standard Hours" || col.fieldname === "Standard Hours") ? "1.0 Hours" :
+                                        (col.label === "Painting 1.5 Hours" || col.fieldname === "Painting 1.5 Hours") ? "1.5 Hours" :
+                                        (col.label === "Painting 2.0 Hours" || col.fieldname === "Painting 2.0 Hours") ? "2.0 Hours" :
+                                        (col.label === "Lunch" || col.fieldname === "Lunch") ? "Lun" :
+                                        (col.label === "Travel" || col.fieldname === "Travel") ? "Trav" :
+                                        (col.label === "Finish" || col.fieldname === "Finish") ? "Fin" :
+                                        (col.label || col.fieldname)
+                                    %}
+                                </th>
+                            {% } %}
                         {% } %}
                     </tr>
                 </thead>
@@ -65,8 +125,20 @@
 
             <tr>
                 {% for (var cell_idx=0, cell_len=columns.length; cell_idx<cell_len; cell_idx++) { %}
-                    {% var fieldname = columns[cell_idx].fieldname; %}
-                    <td>{%= (row && row[fieldname] !== undefined && row[fieldname] !== null) ? row[fieldname] : "" %}</td>
+                    {% var col = columns[cell_idx]; %}
+                    {% if (col.label !== 'Timesheet' && col.fieldname !== 'timesheet') { %}
+                        {% var fieldname = col.fieldname; %}
+                        {% var label = col.label; %}
+                        {% var cell_val = (row && row[fieldname] !== undefined && row[fieldname] !== null) ? row[fieldname] : ""; %}
+                        
+                        <td>
+                            {%= 
+                                ((fieldname === "Start" || label === "Start" || fieldname === "Finish" || label === "Finish") && cell_val.toString().indexOf(':') !== -1) ? 
+                                cell_val.toString().split(':').slice(0, 2).join(':') : 
+                                cell_val 
+                            %}
+                        </td>
+                    {% } %}
                 {% } %}
             </tr>
         {% } %}
