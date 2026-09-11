@@ -1,4 +1,5 @@
 {
+ "app": "farben_quoting",
  "charts": [],
  "content": "[{\"id\":\"vuHi73aalA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Farben Quoting</span>\",\"col\":12}},{\"id\":\"6rSbv8_bnE\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"reuN9ry9C7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quotation\",\"col\":3}},{\"id\":\"JUEthvbND1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Order\",\"col\":3}},{\"id\":\"qTXHMx_1bH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project\",\"col\":3}},{\"id\":\"a5Er66CX4I\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Invoice\",\"col\":3}},{\"id\":\"4KxlvoCGuL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Timesheet (office)\",\"col\":3}},{\"id\":\"UD8i-i_bJe\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Invoice\",\"col\":3}},{\"id\":\"uHVOpeKghQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Email Inbox\",\"col\":3}},{\"id\":\"XKeEwFD5-h\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer\",\"col\":3}},{\"id\":\"nH5WZROknj\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"_lQ7OrE2CA\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Farben Job Tracker\",\"col\":3}},{\"id\":\"TfWSdjQF9i\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Week Ending (from Timesheets)\",\"col\":3}},{\"id\":\"fZ43CTH725\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"tGqvyoUM8U\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Help\",\"col\":3}},{\"id\":\"mM68unobvj\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"WkUlP7OKSM\",\"type\":\"card\",\"data\":{\"card_name\":\"Options\",\"col\":4}},{\"id\":\"26Fv2MAIqX\",\"type\":\"card\",\"data\":{\"card_name\":\"General Setup\",\"col\":4}},{\"id\":\"4F0cBibtSR\",\"type\":\"card\",\"data\":{\"card_name\":\"Template Details\",\"col\":4}},{\"id\":\"fm20-0G0XA\",\"type\":\"card\",\"data\":{\"card_name\":\"Obsolete\",\"col\":4}}]",
  "creation": "2022-11-23 11:59:18.360653",
@@ -7,7 +8,7 @@
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "color-review-points",
+ "icon": "quote",
  "idx": 0,
  "indicator_color": "",
  "is_hidden": 0,
@@ -299,7 +300,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-12 17:34:10.692612",
+ "modified": "2026-09-01 16:25:34.609066",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Farben Quoting",
@@ -308,7 +309,14 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [],
+ "roles": [
+  {
+   "role": "Farben Office"
+  },
+  {
+   "role": "Farben Admin"
+  }
+ ],
  "sequence_id": 1.0,
  "shortcuts": [
   {
@@ -398,5 +406,6 @@
    "type": "DocType"
   }
  ],
- "title": "Farben Quoting"
+ "title": "Farben Quoting",
+ "type": "Workspace"
 }

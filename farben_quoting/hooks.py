@@ -21,7 +21,8 @@ app_license = "MIT"
 
 # include js, css files in header of desk.html
 app_include_css = "/assets/farben_quoting/css/farben_quoting.css"
-# app_include_js = "/assets/farben_quoting/js/farben_quoting.js"
+# app_include_js = "/assets/farben_quoting/js/farben_desk_filter.js"
+
 
 # include js, css files in header of web template
 # web_include_css = "/assets/farben_quoting/css/farben_quoting.css"
@@ -80,7 +81,8 @@ doctype_js = {
 # Permissions evaluated in scripted ways
 
 permission_query_conditions = {
-    "Communication": "farben_quoting.permissions.get_communication_permissions"
+    "Communication": "farben_quoting.api.filter_private_communications"
+    # "Communication": "farben_quoting.permissions.get_communication_permissions"
 	# "Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
 }
 #
@@ -100,11 +102,12 @@ permission_query_conditions = {
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"Timesheet": {
-#         "validate": "farben_quoting.api.calculate_lunch_deduction"
-#     }
-# }
+doc_events = {
+    "Email Account": {
+        "on_update": "farben_quoting.api.manage_email_account_permissions"
+    }
+}
+
 
 # Scheduled Tasks
 # ---------------
@@ -188,4 +191,21 @@ fixtures = ["Help",
             {"dt": "Module Def", "filters": [["name", "like", "%Farben%"]]},
             {"dt": "Role Profile", "filters": [["custom_rosco", "=", "1"]]},
             {"dt": "Module Profile", "filters": [["custom_rosco", "=", "1"]]},
+            # {"dt": "Workspace", "filters": [["app", "in", ["frappe", "erpnext"]]]},
+            {"dt": "Role", "filters": [["name", "like", "%Farben%"]]},
 			]
+
+# add_to_apps_screen = [
+#     {
+#         "name": "farben_employee",                      # Your exact app directory name
+#         "title": "Painter",                    # The display text on the desktop grid
+#         "logo": "/files/cropped-Farben-Logo-2018-PNG-1.png", # The path to your custom icon file
+#         "route": "desk/farben-employee",               # The fallback routing path you verified earlier
+#     },
+#     {
+#         "name": "farben_quoting",
+#         "title": "Office",
+#         "logo": "/files/cropped-Farben-Logo-2018-PNG-1.png", # Update with your preferred SVG logo
+#         "route": "desk/farben-quoting",
+#     }
+# ]
