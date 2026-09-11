@@ -23,7 +23,7 @@
     .report-table {
         width: 100%;
         max-width: 100%;
-        table-layout: fixed;
+        table-layout: fixed; /* Enforces strict width logic, letting columns without a width share residual space */
         border-collapse: collapse;
         margin-top: 15px;
         page-break-inside: auto;
@@ -50,15 +50,15 @@
         font-weight: bold;
     }
 
-    /* CSS Column Width Rules */
-    .col-employee_name, .col-project_name { width: 160px; }
-    .col-date { width: 95px; }
+    /* CSS Column Width Rules for Fixed Columns */
+    .col-date { width: 100px; } /* Set strictly to 100px */
     .col-lunch, .col-travel, .col-meal { width: 40px; }
-    .col-standard_hours { width: 57px; } /* Increased by 10% */
-    .col-painting_1_5_hours, .col-painting_2_0_hours { width: 52px; }
     .col-total_hours, .col-total_meals { width: 60px; }
-    .col-start, .col-finish { width: 55px; }
+    .col-start, .col-finish { width: 75px; }
     .col-activity_type { width: 140px; }
+    
+    /* Removed explicit widths for Name & Project so they automatically divide all extra available canvas area */
+    .col-employee_name, .col-project_name { width: auto; }
 </style>
 
 <h2>{%= __("Week Ending Report") %}</h2>
@@ -70,7 +70,14 @@
             {% for (var col_idx=0, col_len=columns.length; col_idx<col_len; col_idx++) { %}
                 {% var col = columns[col_idx]; %}
                 {% if (col.label !== 'Timesheet' && col.fieldname !== 'timesheet') { %}
-                    <th class="col-{%= col.fieldname %}">
+                    <th class="col-{%= col.fieldname %}" style="{%= 
+                        (col.label === 'Standard Hours' || col.fieldname === 'standard_hours' || 
+                         col.label === 'Painting 1.5 Hours' || col.fieldname === 'painting_1_5_hours' || 
+                         col.label === 'Painting 2.0 Hours' || col.fieldname === 'painting_2_0_hours') ? 'width: 57px;' :
+                        (col.label === 'Start' || col.fieldname === 'start' || 
+                         col.label === 'Finish' || col.fieldname === 'finish') ? 'width: 75px;' : 
+                        (col.label === 'Date' || col.fieldname === 'date') ? 'width: 100px;' : ''
+                    %}">
                         {%= 
                             (col.label === "Employee Name" || col.fieldname === "Employee Name") ? "Name" :
                             (col.label === "Project Name" || col.fieldname === "Project Name") ? "Project" :
@@ -79,7 +86,6 @@
                             (col.label === "Painting 2.0 Hours" || col.fieldname === "Painting 2.0 Hours") ? "2.0 Hours" :
                             (col.label === "Lunch" || col.fieldname === "Lunch") ? "Lun" :
                             (col.label === "Travel" || col.fieldname === "Travel") ? "Trav" :
-                            (col.label === "Finish" || col.fieldname === "Finish") ? "Fin" :
                             (col.label || col.fieldname)
                         %}
                     </th>
@@ -103,7 +109,14 @@
                         {% for (var col_idx=0, col_len=columns.length; col_idx<col_len; col_idx++) { %}
                             {% var col = columns[col_idx]; %}
                             {% if (col.label !== 'Timesheet' && col.fieldname !== 'timesheet') { %}
-                                <th class="col-{%= col.fieldname %}">
+                                <th class="col-{%= col.fieldname %}" style="{%= 
+                                    (col.label === 'Standard Hours' || col.fieldname === 'standard_hours' || 
+                                     col.label === 'Painting 1.5 Hours' || col.fieldname === 'painting_1_5_hours' || 
+                                     col.label === 'Painting 2.0 Hours' || col.fieldname === 'painting_2_0_hours') ? 'width: 57px;' :
+                                    (col.label === 'Start' || col.fieldname === 'start' || 
+                                     col.label === 'Finish' || col.fieldname === 'finish') ? 'width: 75px;' : 
+                                    (col.label === 'Date' || col.fieldname === 'date') ? 'width: 100px;' : ''
+                                %}">
                                     {%= 
                                         (col.label === "Employee Name" || col.fieldname === "Employee Name") ? "Name" :
                                         (col.label === "Project Name" || col.fieldname === "Project Name") ? "Project" :
@@ -112,7 +125,6 @@
                                         (col.label === "Painting 2.0 Hours" || col.fieldname === "Painting 2.0 Hours") ? "2.0 Hours" :
                                         (col.label === "Lunch" || col.fieldname === "Lunch") ? "Lun" :
                                         (col.label === "Travel" || col.fieldname === "Travel") ? "Trav" :
-                                        (col.label === "Finish" || col.fieldname === "Finish") ? "Fin" :
                                         (col.label || col.fieldname)
                                     %}
                                 </th>
