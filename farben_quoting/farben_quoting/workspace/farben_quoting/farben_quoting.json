@@ -154,65 +154,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Obsolete",
-   "link_count": 5,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Quotes (old)",
-   "link_count": 0,
-   "link_to": "Quotes",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Companies (old)",
-   "link_count": 0,
-   "link_to": "Companies",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Customers (old)",
-   "link_count": 0,
-   "link_to": "Customers",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Payment Terms (old)",
-   "link_count": 0,
-   "link_to": "Payment Terms",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "City State Postcodes (old)",
-   "link_count": 0,
-   "link_to": "City State Postcodes",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Options",
    "link_count": 8,
    "link_type": "DocType",
@@ -298,9 +239,78 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Obsolete",
+   "link_count": 6,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Quotes (old)",
+   "link_count": 0,
+   "link_to": "Quotes",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Companies (old)",
+   "link_count": 0,
+   "link_to": "Companies",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customers (old)",
+   "link_count": 0,
+   "link_to": "Customers",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Payment Terms (old)",
+   "link_count": 0,
+   "link_to": "Payment Terms",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "City State Postcodes (old)",
+   "link_count": 0,
+   "link_to": "City State Postcodes",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "API Request Log",
+   "link_count": 0,
+   "link_to": "API Request Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2026-09-01 16:25:34.609066",
+ "modified": "2026-09-11 18:40:29.301417",
  "modified_by": "Administrator",
  "module": "Farben Quoting",
  "name": "Farben Quoting",

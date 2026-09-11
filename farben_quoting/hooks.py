@@ -47,6 +47,20 @@ doctype_js = {
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
+# Set the landing workspace for your custom app
+app_home = "/desk/farben-quoting"
+
+# Register your custom app details into the global apps layout
+add_to_apps_screen = [
+    {
+        "name": "farben_quoting",
+        "title": "Farben Quoting",
+        "logo": "/assets/farben_quoting/images/logo.png",
+        "route": "/app/farben-quoting",
+        "is_standard": 1
+    }
+]
+
 # Home Pages
 # ----------
 
@@ -193,7 +207,10 @@ fixtures = ["Help",
             {"dt": "Module Profile", "filters": [["custom_rosco", "=", "1"]]},
             # {"dt": "Workspace", "filters": [["app", "in", ["frappe", "erpnext"]]]},
             {"dt": "Role", "filters": [["name", "like", "%Farben%"]]},
-			]
+    		{"dt": "Workspace", "filters": [["module", "=", "Your Custom Module"]]},
+    		{"dt": "Workspace Sidebar"},
+    		{"dt": "Desktop Icon"}
+		]
 
 # add_to_apps_screen = [
 #     {
