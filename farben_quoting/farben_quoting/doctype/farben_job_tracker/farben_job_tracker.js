@@ -137,15 +137,19 @@ frappe.ui.form.on("Farben Job Tracker", {
     },
     project: function(frm) {
         if (frm.doc.project) {
-            // Fetch project_name and customer to load Data type fields
-            frappe.db.get_value('Project', frm.doc.project, ['project_name', 'customer'])
-                .then(r => {
-                    if (r && r.message) {
-                        // Update both fields in your custom doctype
-                        frm.set_value('project_name', r.message.project_name);
-                        frm.set_value('customer', r.message.customer);
-                    }
-                });
+            // Fetch project_name and customer using get_list to bypass get_value read restriction
+            frappe.db.get_list('Project', {
+                filters: { name: frm.doc.project },
+                fields: ['project_name', 'customer'],
+                limit: 1
+            }).then(records => {
+                if (records && records.length > 0) {
+                    const project_data = records[0];
+                    // Update both fields in your custom doctype
+                    frm.set_value('project_name', project_data.project_name);
+                    frm.set_value('customer', project_data.customer);
+                }
+    });
         } else {
             // Clear fields if project is deselected
             frm.set_value('project_name', '');
