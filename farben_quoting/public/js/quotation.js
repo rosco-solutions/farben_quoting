@@ -11,6 +11,7 @@ frappe.ui.form.on("Quotation", {
 				if (records.length > 0) {
 					var item_codes = records.map(r => r.item_code);
 					frappe.db.get_list('UOM Conversion Detail', {
+						parent_doctype: 'Item', // Tells Frappe to check permissions against Item doctype
 						fields: ['parent', 'uom', 'conversion_factor'],
 						filters: {'parent': ['in', item_codes]},
 						limit_page_length: 0
