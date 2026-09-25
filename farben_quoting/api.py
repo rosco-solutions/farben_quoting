@@ -13,7 +13,8 @@ def custom_calculate_hours(self):
             
             # Apply your custom lunch deduction logic
             if getattr(row, "custom_lunch_included", None):
-                row.hours = max(0, duration - 0.5)
+                if row.hours != duration: # this check was put in to ensure the to_time does not get reduced every time a save occurs
+                    row.hours = max(0, duration - 0.5)
             else:
                 row.hours = duration
 
