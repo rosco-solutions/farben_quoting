@@ -104,7 +104,7 @@
   "custom_rosco": 1,
   "docstatus": 0,
   "doctype": "Role Profile",
-  "modified": "2026-09-04 13:51:48.574559",
+  "modified": "2026-09-25 15:22:11.748183",
   "name": "Office",
   "role_profile": "Office",
   "roles": [
@@ -235,12 +235,6 @@
     "role": "Script Manager"
    },
    {
-    "role": "Shop Floor Manager"
-   },
-   {
-    "role": "Shop Floor User"
-   },
-   {
     "role": "Stock Manager"
    },
    {
@@ -286,7 +280,7 @@
   "custom_rosco": 1,
   "docstatus": 0,
   "doctype": "Role Profile",
-  "modified": "2026-09-04 13:51:40.315191",
+  "modified": "2026-09-25 15:22:21.001911",
   "name": "Office Admin",
   "role_profile": "Office Admin",
   "roles": [
@@ -418,12 +412,6 @@
    },
    {
     "role": "Script Manager"
-   },
-   {
-    "role": "Shop Floor Manager"
-   },
-   {
-    "role": "Shop Floor User"
    },
    {
     "role": "Stock Manager"
