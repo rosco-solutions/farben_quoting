@@ -207,9 +207,10 @@ fixtures = ["Help",
             {"dt": "Module Profile", "filters": [["custom_rosco", "=", "1"]]},
             # {"dt": "Workspace", "filters": [["app", "in", ["frappe", "erpnext"]]]},
             {"dt": "Role", "filters": [["name", "like", "%Farben%"]]},
-    		{"dt": "Workspace", "filters": [["module", "=", "Your Custom Module"]]},
+    		{"dt": "Workspace", "filters": [["module", "=", "Farben Quoting"]]},
     		{"dt": "Workspace Sidebar"},
     		{"dt": "Desktop Icon"}
+      # might need to add print formats here
 		]
 
 # add_to_apps_screen = [
