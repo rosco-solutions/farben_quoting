@@ -64,7 +64,7 @@ def manage_email_account_permissions(doc, method=None):
         }
     )
 
-    if doc.custom_make_private:
+    if getattr(doc, "custom_make_private", None):  #if doc.custom_make_private:
         # If checked and permission doesn't exist, create it
         if not existing_permission:
             p_doc = frappe.new_doc("User Permission")
