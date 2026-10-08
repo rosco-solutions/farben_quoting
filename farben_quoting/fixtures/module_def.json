@@ -1,6 +1,28 @@
 [
  {
   "app_name": "farben_quoting",
+  "custom": 1,
+  "docstatus": 0,
+  "doctype": "Module Def",
+  "modified": "2026-10-08 14:46:27.738202",
+  "module_name": "Farben Employee (Custom)",
+  "name": "Farben Employee (Custom)",
+  "package": null,
+  "restrict_to_domain": null
+ },
+ {
+  "app_name": "farben_quoting",
+  "custom": 1,
+  "docstatus": 0,
+  "doctype": "Module Def",
+  "modified": "2026-10-08 14:46:27.994739",
+  "module_name": "Farben Quoting (Custom)",
+  "name": "Farben Quoting (Custom)",
+  "package": null,
+  "restrict_to_domain": null
+ },
+ {
+  "app_name": "farben_quoting",
   "custom": 0,
   "docstatus": 0,
   "doctype": "Module Def",

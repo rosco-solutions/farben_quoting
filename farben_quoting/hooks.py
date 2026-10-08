@@ -119,6 +119,9 @@ permission_query_conditions = {
 doc_events = {
     "Email Account": {
         "on_update": "farben_quoting.api.manage_email_account_permissions"
+    },
+    "Quotation": {
+        "before_save": "farben_quoting.api.autofill_quotation_title"
     }
 }
 

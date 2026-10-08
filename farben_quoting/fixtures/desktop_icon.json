@@ -1051,27 +1051,5 @@
   "roles": [],
   "sidebar": null,
   "standard": 1
- },
- {
-  "app": "frappe",
-  "bg_color": null,
-  "docstatus": 0,
-  "doctype": "Desktop Icon",
-  "hidden": 0,
-  "icon": "user-round",
-  "icon_image": null,
-  "icon_type": "Link",
-  "label": "My Workspaces",
-  "link": null,
-  "link_to": "My Workspaces",
-  "link_type": "Workspace Sidebar",
-  "logo_url": null,
-  "modified": "2026-01-01 20:07:01.338117",
-  "name": "My Workspaces",
-  "parent_icon": null,
-  "restrict_removal": 1,
-  "roles": [],
-  "sidebar": "My Workspaces",
-  "standard": 1
  }
 ]
