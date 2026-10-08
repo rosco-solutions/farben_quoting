@@ -116,3 +116,26 @@ def filter_private_communications(user=None):
         return f"(ifnull(email_account, '') NOT IN ({formatted_list}))"
 
     return ""
+
+import frappe
+
+def autofill_quotation_title(doc, method=None):
+    """
+    Automatically populates the new V16 'title' field based on the selected 
+    Customer or Lead before the Quotation document is saved to the database,
+    ONLY if the title field is currently empty.
+    """
+    # Check if the Title field is empty, null, or whitespace
+    if not doc.title or not doc.title.strip():
+        
+        # 1. Check if a Customer is linked to the Quotation
+        if doc.customer:
+            customer_name = frappe.db.get_value("Customer", doc.customer, "customer_name")
+            if customer_name:
+                doc.title = customer_name
+
+        # 2. Fallback to Lead Name if it's a quote for a prospective lead instead
+        elif doc.lead:
+            lead_name = frappe.db.get_value("Lead", doc.lead, "lead_name")
+            if lead_name:
+                doc.title = lead_name

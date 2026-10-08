@@ -72,6 +72,7 @@ frappe.ui.form.on("Quotation", {
 			frm.set_value('custom_contact_first_name', '');
 		}
 	},
+
     custom_job_type: function(frm) {
 		if (!job_type_timeout){
 			frappe.confirm(
